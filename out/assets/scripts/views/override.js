@@ -13,13 +13,16 @@
     }
 
     Override.prototype.initialize = function() {
-      this.setElement($('#btn-override'));
-      return this.$option = this.$('#option');
+      return this.setElement($('#btn-override'));
     };
 
     Override.prototype.events = {
       'click': function() {
-        return this.$option.removeClass('is-hidden');
+        if (this.$el.text() === "Override") {
+          return this.$el.text("Revert");
+        } else {
+          return this.$el.text("Override");
+        }
       }
     };
 

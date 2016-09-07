@@ -4,11 +4,12 @@ class views.Override extends Backbone.View
 
   initialize: ->
     @setElement $('#btn-override')
-    @$option = @$('#option') 
 
   events:
     'click': ->
-      @$option.removeClass('is-hidden') 
-       
+      if @$el.text() is "Override"
+        @$el.text "Revert"
+      else
+        @$el.text "Override"
 
   

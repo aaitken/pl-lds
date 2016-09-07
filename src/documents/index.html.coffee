@@ -28,7 +28,7 @@ table class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--
   thead ->
     tr class:"slds-text-heading--label", ->
       infoIcon = 'expenses/header-info-icon'
-      dropdown = 'expenses/dropdown'
+      dropdown = 'expenses/override-button'
       for heading in [
         ['25', 'Expense Category']
         ['17', "Budgeted#{@partial(infoIcon)}#{@partial(dropdown)}<br>OpEx"]
