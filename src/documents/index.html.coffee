@@ -14,7 +14,7 @@ form ".slds-form--inline.slds-m-bottom--medium", ->
     div ".slds-form-element__control", ->
       input "#name.slds-input", type: "text"
   div ".slds-form-element", ->
-    label ".slds-form-element__label", for: "email", "Email"
+    label ".slds-form-element__label", for: "email", "Lease Type"
     div ".slds-form-element__control", ->
       div ".slds-select_container", ->
         select "#select-01.slds-select", ->

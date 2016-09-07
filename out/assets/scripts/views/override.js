@@ -9,18 +9,18 @@
     extend(Override, superClass);
 
     function Override() {
-      this.el = $('#btn-override');
-      Override.__super__.constructor.call(this);
+      return Override.__super__.constructor.apply(this, arguments);
     }
+
+    Override.prototype.initialize = function() {
+      this.setElement($('#btn-override'));
+      return this.$option = this.$('#option');
+    };
 
     Override.prototype.events = {
       'click': function() {
-        return alert('click');
+        return this.$option.removeClass('is-hidden');
       }
-    };
-
-    Override.prototype.initialize = function() {
-      return alert('init');
     };
 
     return Override;

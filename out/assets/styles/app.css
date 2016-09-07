@@ -5,3 +5,7 @@ body {
 thead tr {
   background-color: #efefef;
 }
+
+.is-hidden {
+  display: none !important;
+}

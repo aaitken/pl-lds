@@ -2,13 +2,13 @@ views = window.PLP.views
 
 class views.Override extends Backbone.View
 
-  constructor: ->
-    @el = $('#btn-override')
-    super()
+  initialize: ->
+    @setElement $('#btn-override')
+    @$option = @$('#option') 
 
   events:
     'click': ->
-      alert 'click'
+      @$option.removeClass('is-hidden') 
+       
 
-  initialize: ->
-    alert 'init'
+  
