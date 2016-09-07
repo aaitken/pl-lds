@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system.css" media="all" />
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.css" media="all" />
+    <link rel="stylesheet" href="/assets/styles/overrides.css" media="all" />
+    <link rel="stylesheet" href="/assets/styles/app.css" media="all" />
   </head>
   <body>
-    <h1 class="slds-text-heading--large">Tell me this!</h1>
-<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover">
+    <h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Settings and Selections</h1>
+<form class="slds-form--inline slds-m-bottom--medium">
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="name">Expense Base Year</label>
+    <div class="slds-form-element__control">
+      <input id="name" class="slds-input" type="text" />
+    </div>
+  </div>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="email">Email</label>
+    <div class="slds-form-element__control">
+      <div class="slds-select_container">
+        <select id="select-01" class="slds-select">
+          <option>Gross</option>
+          <option>mgpm</option>
+          <option>modgross</option>
+          <option>nnn</option>
+          <option>nnnpm</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+<table class="slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover">
   <thead>
     <tr class="slds-text-heading--label">
-      <th width="20%" valign="top">
+      <th width="25%" valign="top">
         <div class="slds-truncate">Expense Category</div>
       </th>
-      <th width="18%" valign="top">
-        <div class="slds-truncate">Current Year Avg.<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .5rem" ><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use></svg></span><br>Budgeted OpEx</div>
+      <th width="17%" valign="top">
+        <div class="slds-truncate">Budgeted<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .75rem" >
+  <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+  </svg>
+</span><div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open", style="position:absolute; margin: -.1rem 0 0 2.5rem">
+  <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
+    <svg aria-hidden="true" class="slds-button__icon">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+    </svg>
+    <span class="slds-assistive-text">Show More</span>
+  </button>
+</div> <br>OpEx</div>
       </th>
-      <th width="18%" valign="top">
-        <div class="slds-truncate">Recoverable Outside<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .5rem" ><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use></svg></span><br>of Base Rent</div>
+      <th width="14.5%" valign="top">
+        <div class="slds-truncate">Recoverable<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .75rem" >
+  <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+  </svg>
+</span><br>Outside Rent</div>
       </th>
-      <th width="16%" valign="top">
-        <div class="slds-truncate">Expense Stop<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .5rem" ><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use></svg></span></div>
+      <th width="14.5%" valign="top">
+        <div class="slds-truncate">Expense Stop<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .75rem" >
+  <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+  </svg>
+</span></div>
       </th>
-      <th width="14%" valign="top">
-        <div class="slds-truncate">Stop Amount<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .5rem" ><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use></svg></span></div>
+      <th width="14.5%" valign="top">
+        <div class="slds-truncate">Stop Amount<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .75rem" >
+  <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+  </svg>
+</span></div>
       </th>
-      <th width="14%" valign="top">
-        <div class="slds-truncate">Cap<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .5rem" ><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use></svg></span></div>
+      <th width="14.5%" valign="top">
+        <div class="slds-truncate">Cap<span class="slds-icon_container" style="position:absolute; margin: -.1rem 0 0 .75rem" >
+  <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+  </svg>
+</span></div>
       </th>
     </tr>
   </thead>
@@ -37,16 +88,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -57,16 +133,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -77,16 +178,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -97,16 +223,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -117,16 +268,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -137,16 +313,41 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
     </tr>
     <tr>
@@ -157,20 +358,59 @@
         <div class="slds-truncate">0.0000</div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element"> <div class="slds-form-element__control"> <input id="text-input-01" class="slds-input" type="text" placeholder="" /> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <input id="text-input-01" class="slds-input" type="text" placeholder="" />
+  </div>
+</div></div>
       </td>
       <td>
-        <div class="slds-truncate"><div class="slds-form-element__control"> <div class="slds-select_container"> <select id="select-01" class="slds-select"> <option></option> <option>Yes</option> <option>No</option> </select> </div> </div></div>
+        <div class="slds-truncate"><div class="slds-form-element__control">
+  <div class="slds-select_container">
+    <select id="select-01" class="slds-select">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+</div></div>
       </td>
+    </tr>
+    <tr style="height: 49px">
+      <td class="slds-text-heading--label">OpEx and Stop Totals</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>100000</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
+<h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Comments</h1>
+<div class="slds-form-element">
+  <div class="slds-form-element__control">
+    <textarea class="slds-textarea" placeholder="Add expense comments here."></textarea>
+  </div>
+</div>
 
   </body>
 </html>

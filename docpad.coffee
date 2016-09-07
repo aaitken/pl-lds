@@ -4,11 +4,6 @@
 # Define the DocPad Configuration
 docpadConfig = {
   
-  filesPaths: [
-    'files'
-    '../node_modules/@salesforce-ux/design-system']
-
-
 	# ...
 }
 

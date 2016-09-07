@@ -1,7 +1,9 @@
 --- cson
 
 styles: [
-  'assets/styles/salesforce-lightning-design-system.css']
+  '/assets/styles/salesforce-lightning-design-system.css'
+  '/assets/styles/overrides.css'
+  '/assets/styles/app.css']
 
 scripts: []
 
