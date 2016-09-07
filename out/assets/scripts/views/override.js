@@ -12,16 +12,21 @@
       return Override.__super__.constructor.apply(this, arguments);
     }
 
-    Override.prototype.initialize = function() {
-      return this.setElement($('#btn-override'));
+    Override.prototype.initialize = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      return this.parent = options.parent;
     };
 
     Override.prototype.events = {
       'click': function() {
         if (this.$el.text() === "Override") {
-          return this.$el.text("Revert");
+          this.$el.text("Revert");
+          return this.parent.tbody.makeOpexEditable();
         } else {
-          return this.$el.text("Override");
+          this.$el.text("Override");
+          return this.parent.tbody.makeOpexRO();
         }
       }
     };

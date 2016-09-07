@@ -1,4 +1,4 @@
 (function() {
-  new PLP.views.Override();
+  new PLP.views.Table();
 
 }).call(this);

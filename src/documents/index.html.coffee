@@ -24,7 +24,7 @@ form ".slds-form--inline.slds-m-bottom--medium", ->
           option "nnn"
           option "nnnpm"
 
-table class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
+table id:"expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
   thead ->
     tr class:"slds-text-heading--label", ->
       infoIcon = 'expenses/header-info-icon'
@@ -38,14 +38,14 @@ table class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--
         ['14.5', "Cap#{@partial(infoIcon)}"]]
         th width:"#{heading[0]}%", valign:"top", ->
           div class:"slds-truncate", heading[1]
-  tbody ->
+  tbody id:"expenses-table-body", ->
     ynSelect = 'expenses/yes-no-select'
     textField = 'expenses/text-field'
     for row in [
       ['Common Area Maintenance', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
-      ['Insurance', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
-      ['Property Taxes', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
-      ['Utilities', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
+      ['Insurance', '1.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
+      ['Property Taxes', '2.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
+      ['Utilities', '3.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
       ['Management Fees', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
       ['Amortized CAM Recoveries', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]
       ['Tarmac', '0.0000', @partial(ynSelect), @partial(ynSelect), @partial(textField), @partial(ynSelect)]]

@@ -10,6 +10,8 @@ scripts: [
   '/assets/scripts/vendor/underscore-1.8.3.js'
   '/assets/scripts/vendor/backbone-1.3.3.js'
   '/assets/scripts/namespaces.js'
+  '/assets/scripts/views/table.js'
+  '/assets/scripts/views/tbody.js'
   '/assets/scripts/views/override.js'
   '/assets/scripts/app.js']
 
