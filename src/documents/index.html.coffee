@@ -5,6 +5,26 @@ layout: 'default'
 ---
 
 
+div class:"slds-m-bottom--x-large plp-kpi-container", ->
+  img src:"/assets/images/KPIs.png" 
+  
+
+div class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
+  a "Units"
+  span "|"
+  a "Rents & Incentives"
+  span "|"
+  a "Tenant Improvements"
+  span "|"
+  a "Commissions"
+  span "|"
+  a class:"plp-is-active", "Expenses"
+  span "|"
+  a "Rent Indexation"
+  span "|"
+  a "Guarantees"
+  span "|"
+  a "Options"
 
 h1 class:"slds-text-heading--small slds-m-bottom--medium", style:"font-weight:regular" , "Settings and Selections"
 

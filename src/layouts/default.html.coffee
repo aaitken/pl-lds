@@ -13,6 +13,7 @@ scripts: [
   '/assets/scripts/views/table.js'
   '/assets/scripts/views/tbody.js'
   '/assets/scripts/views/override.js'
+  '/assets/scripts/templates/text-field.js'
   '/assets/scripts/app.js']
 
 ---

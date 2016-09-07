@@ -3,4 +3,6 @@
 
   window.PLP.views = window.PLP.views || {};
 
+  window.PLP.templates = window.PLP.templates || {};
+
 }).call(this);

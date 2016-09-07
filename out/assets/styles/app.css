@@ -3,9 +3,30 @@ body {
 }
 
 thead tr {
-  background-color: #efefef;
+  background-color: #f4f6f9;
 }
 
 .is-hidden {
   display: none !important;
+}
+
+.plp-kpi-container {
+  background: #f4f6f9;
+  overflow: hidden;
+}
+.plp-kpi-container img {
+  margin-bottom: -3px;
+  margin-left: -16px;
+  height: 304px;
+  width: auto;
+}
+
+.plp-is-active {
+  font-weight: bold;
+  color: #16325c;
+}
+
+.plp-submenu span {
+  display: inline-block;
+  margin: 0 3px;
 }
