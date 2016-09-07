@@ -5,7 +5,13 @@ styles: [
   '/assets/styles/overrides.css'
   '/assets/styles/app.css']
 
-scripts: []
+scripts: [
+  '/assets/scripts/vendor/jquery-3.1.0.js'
+  '/assets/scripts/vendor/underscore-1.8.3.js'
+  '/assets/scripts/vendor/backbone-1.3.3.js'
+  '/assets/scripts/namespaces.js'
+  '/assets/scripts/views/override.js'
+  '/assets/scripts/app.js']
 
 ---
 
@@ -16,4 +22,9 @@ html ->
     for url in @assets('styles')
       link rel:"stylesheet", href:url, media:"all"
   body ->
-    @content
+    text @content
+
+    #insert script using frontend plugin
+    #this picks up incrementally-named document scripts as well
+    for url in @assets('scripts')
+      script src:url, defer:"defer"

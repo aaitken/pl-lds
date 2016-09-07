@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/assets/styles/app.css" media="all" />
   </head>
   <body>
-    <h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Settings and Selections</h1>
+<h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Settings and Selections</h1>
 <form class="slds-form--inline slds-m-bottom--medium">
   <div class="slds-form-element">
     <label class="slds-form-element__label" for="name">Expense Base Year</label>
@@ -41,7 +41,7 @@
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
   </svg>
 </span><div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open", style="position:absolute; margin: -.1rem 0 0 2.5rem">
-  <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
+  <button id="btn-override" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
     <svg aria-hidden="true" class="slds-button__icon">
       <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
     </svg>
@@ -411,6 +411,11 @@
     <textarea class="slds-textarea" placeholder="Add expense comments here."></textarea>
   </div>
 </div>
-
+    <script src="/assets/scripts/vendor/jquery-3.1.0.js" defer="defer"></script>
+    <script src="/assets/scripts/vendor/underscore-1.8.3.js" defer="defer"></script>
+    <script src="/assets/scripts/vendor/backbone-1.3.3.js" defer="defer"></script>
+    <script src="/assets/scripts/namespaces.js" defer="defer"></script>
+    <script src="/assets/scripts/views/override.js" defer="defer"></script>
+    <script src="/assets/scripts/app.js" defer="defer"></script>
   </body>
 </html>

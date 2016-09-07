@@ -27,7 +27,7 @@ snippets:
       </div>"""
     dropdown: """
       <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open", style="position:absolute; margin: -.1rem 0 0 2.5rem">
-        <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
+        <button id="btn-override" class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
           <svg aria-hidden="true" class="slds-button__icon">
             <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
           </svg>
