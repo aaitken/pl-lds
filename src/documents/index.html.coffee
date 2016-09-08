@@ -5,6 +5,8 @@ layout: 'default'
 ---
 
 
+text @partial('chevron')
+
 ul ".slds-m-bottom--x-large.slds-tabs--default__nav", role: "tablist", ->
   li ".slds-tabs--default__item.slds-text-title--caps", ->
     a ".slds-tabs--default__link", "Overview"
