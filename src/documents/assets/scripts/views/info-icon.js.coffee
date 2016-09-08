@@ -1,5 +1,5 @@
 views = PLP.namespace('views')
-templates = PLP.namespace('templates')
+snippets = PLP.namespace('snippets')
 
 class views['info-icon'] extends Backbone.View
 
@@ -11,7 +11,7 @@ class views['info-icon'] extends Backbone.View
       alert 'info'
 
   initialize: ->
-    @template = _.template(templates['info-icon'])
+    @template = _.template(snippets['info-icon'])
     @render()
 
   render: ->

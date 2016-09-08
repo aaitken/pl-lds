@@ -1,5 +1,4 @@
 views = PLP.namespace('views')
-templates = PLP.namespace('templates')
 
 class views['expenses-table-head'] extends Backbone.View
 
@@ -21,5 +20,3 @@ class views['expenses-table-head'] extends Backbone.View
     #override
     expensesTableOverrideView = new @ExpensesTableOverrideView()
     @$el.find('th:eq(1) span:eq(1)').after expensesTableOverrideView.el
-
-      

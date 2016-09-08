@@ -45,13 +45,11 @@
 
 }).call(this);
 ;(function() {
-  var templates, views,
+  var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
   views = PLP.namespace('views');
-
-  templates = PLP.namespace('templates');
 
   views['expenses-table-head'] = (function(superClass) {
     extend(_Class, superClass);
@@ -161,13 +159,13 @@
 
 }).call(this);
 ;(function() {
-  var templates, views,
+  var snippets, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
   views = PLP.namespace('views');
 
-  templates = PLP.namespace('templates');
+  snippets = PLP.namespace('snippets');
 
   views['info-icon'] = (function(superClass) {
     extend(_Class, superClass);
@@ -187,7 +185,7 @@
     };
 
     _Class.prototype.initialize = function() {
-      this.template = _.template(templates['info-icon']);
+      this.template = _.template(snippets['info-icon']);
       return this.render();
     };
 
