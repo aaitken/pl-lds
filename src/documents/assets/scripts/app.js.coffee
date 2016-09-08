@@ -1,1 +1,1 @@
-new PLP.views.Table()
+new PLP.views['expenses-table']()

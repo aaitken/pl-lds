@@ -1,4 +1,4 @@
 (function() {
-  new PLP.views.Table();
+  new PLP.views['expenses-table']();
 
 }).call(this);

@@ -10,10 +10,13 @@ scripts: [
   '/assets/scripts/vendor/underscore-1.8.3.js'
   '/assets/scripts/vendor/backbone-1.3.3.js'
   '/assets/scripts/utils/namespacer.js'
-  '/assets/scripts/views/table.js'
-  '/assets/scripts/views/tbody.js'
+  '/assets/scripts/content/expenses-table.js'
+  '/assets/scripts/views/expenses-table.js'
+  '/assets/scripts/views/expenses-table-body-row.js'
   '/assets/scripts/views/override.js'
+  '/assets/scripts/templates/expenses-table-body-row.js'
   '/assets/scripts/templates/text-field.js'
+  '/assets/scripts/templates/yes-no-select.js'
   '/assets/scripts/app.js']
 
 ---

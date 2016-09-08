@@ -5,26 +5,25 @@
 
   views = PLP.namespace('views');
 
-  views.Table = (function(superClass) {
-    extend(Table, superClass);
+  views['expenses-table'] = (function(superClass) {
+    extend(_Class, superClass);
 
-    function Table() {
-      return Table.__super__.constructor.apply(this, arguments);
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
     }
 
-    Table.prototype.initialize = function() {
-      this.setElement($('#expenses-table'));
+    _Class.prototype.initialize = function() {
+      this.setElement($('#bbv-expenses-table'));
       this.overrideBtn = new views.Override({
         el: this.$('#expenses-table-override'),
         parent: this
       });
-      return this.tbody = new views.Tbody({
-        el: this.$('#expenses-table-body'),
-        parent: this
+      return this.tbody = new views['expenses-table-body-row']({
+        el: this.$('#bbv-expenses-table-body')
       });
     };
 
-    return Table;
+    return _Class;
 
   })(Backbone.View);
 
