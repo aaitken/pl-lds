@@ -9,8 +9,13 @@ class views['expenses-table'] extends Backbone.View
     @setElement $('#expenses-table')
     @thead = new views['expenses-table-head'] {
       el: @$('#expenses-table-head')}
-    @tbody = new views['expenses-table-body'] {
+    @tbody = views['expenses-table-body'].singleton {
       el: @$('#expenses-table-body')}
 
-  hide: ->
-    @$el.hide()
+  override: ->
+    _.each @tbody.rowViews, (item)->
+      item.makeOpexEditable()
+
+  revert: ->
+    _.each @tbody.rowViews, (item)->
+      item.makeOpexRO()
