@@ -9,7 +9,7 @@
 
   content = PLP.namespace('content');
 
-  views['expenses-table-body-row'] = (function(superClass) {
+  views['expenses-table-body'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {

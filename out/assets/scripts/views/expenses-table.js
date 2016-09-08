@@ -14,11 +14,14 @@
 
     _Class.prototype.initialize = function() {
       this.setElement($('#bbv-expenses-table'));
-      this.overrideBtn = new views.Override({
+      this.overrideBtn = new views['expenses-table-override']({
         el: this.$('#expenses-table-override'),
         parent: this
       });
-      return this.tbody = new views['expenses-table-body-row']({
+      this.thead = new views['expenses-table-head']({
+        el: this.$('#bbv-expenses-table-head')
+      });
+      return this.tbody = new views['expenses-table-body']({
         el: this.$('#bbv-expenses-table-body')
       });
     };

@@ -1,7 +1,8 @@
 content = PLP.namespace('content')
 
 content['expenses-table'] = {
-  thead: ''
+  help: [
+    '', '', '', '', '']
   tbody: [
     ['Common Area Maintenance', '0.0000']
     ['Insurance', '1.0000']

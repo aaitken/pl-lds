@@ -2,7 +2,7 @@ views = PLP.namespace('views')
 templates = PLP.namespace('templates')
 content = PLP.namespace('content')
 
-class views['expenses-table-body-row'] extends Backbone.View
+class views['expenses-table-body'] extends Backbone.View
 
   initialize: (options = {})->
     @rowTemplate = _.template(templates['expenses-table-body-row'])

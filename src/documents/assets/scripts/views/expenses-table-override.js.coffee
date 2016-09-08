@@ -1,6 +1,6 @@
 views = PLP.namespace('views')
 
-class views.Override extends Backbone.View
+class views['expenses-table-override'] extends Backbone.View
 
   initialize: (options = {})->
     @parent = options.parent

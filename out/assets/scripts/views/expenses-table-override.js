@@ -5,21 +5,21 @@
 
   views = PLP.namespace('views');
 
-  views.Override = (function(superClass) {
-    extend(Override, superClass);
+  views['expenses-table-override'] = (function(superClass) {
+    extend(_Class, superClass);
 
-    function Override() {
-      return Override.__super__.constructor.apply(this, arguments);
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
     }
 
-    Override.prototype.initialize = function(options) {
+    _Class.prototype.initialize = function(options) {
       if (options == null) {
         options = {};
       }
       return this.parent = options.parent;
     };
 
-    Override.prototype.events = {
+    _Class.prototype.events = {
       'click': function() {
         if (this.$el.text() === "Override") {
           this.$el.text("Revert");
@@ -31,7 +31,7 @@
       }
     };
 
-    return Override;
+    return _Class;
 
   })(Backbone.View);
 

@@ -65,17 +65,15 @@ form ".slds-form--inline.slds-m-bottom--medium", ->
           option "nnnpm"
 
 table id:"bbv-expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
-  thead ->
+  thead id:"bbv-expenses-table-head", ->
     tr class:"slds-text-heading--label", ->
-      infoIcon = 'expenses/header-info-icon'
-      dropdown = 'expenses/override-button'
       for heading in [
-        ['25', 'Expense Category']
-        ['17', "Budgeted#{@partial(infoIcon)}#{@partial(dropdown)}<br>OpEx"]
-        ['14.5', "Recoverable#{@partial(infoIcon)}<br>Outside Rent"]
-        ['14.5', "Expense Stop#{@partial(infoIcon)}"]
-        ['14.5', "Stop Amount#{@partial(infoIcon)}"]
-        ['14.5', "Cap#{@partial(infoIcon)}"]]
+        ['25', '<span>Expense Category</span>']
+        ['17', "<span>Budgeted</span><br>OpEx"]
+        ['14.5', "<span>Recoverable</span><br>Outside Rent"]
+        ['14.5', "<span>Expense Stop</span>"]
+        ['14.5', "<span>Stop Amount</span>"]
+        ['14.5', "<span>Cap</span>"]]
         th width:"#{heading[0]}%", valign:"top", ->
           div class:"slds-truncate", heading[1]
   tbody id:"bbv-expenses-table-body", ->
