@@ -3,7 +3,8 @@
 styles: [
   '/assets/styles/salesforce-lightning-design-system.css'
   '/assets/styles/overrides.css'
-  '/assets/styles/app.css']
+  '/assets/styles/app.css'
+  '/assets/styles/views.css']
 
 scripts: [
   '/assets/scripts/vendors.js'

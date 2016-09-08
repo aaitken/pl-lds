@@ -11,7 +11,7 @@
 
   templates = PLP.namespace('templates');
 
-  templates['info-icon'] = "<span class=\"slds-icon_container\">\n  <svg aria-hidden=\"true\" class=\"slds-icon slds-icon-text-default\">\n    <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>\n  </svg>\n</span>";
+  templates['info-icon'] = "<svg aria-hidden=\"true\" class=\"slds-icon slds-icon--x-small slds-icon-text-default\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>\n</svg>";
 
 }).call(this);
 ;(function() {
@@ -20,6 +20,14 @@
   templates = PLP.namespace('templates');
 
   templates['text-field'] = "<div class=\"slds-form-element\">\n  <div class=\"slds-form-element__control\">\n    <input id=\"text-input-01\" class=\"slds-input\" type=\"text\" value=\"\">\n  </div>\n</div>";
+
+}).call(this);
+;(function() {
+  var templates;
+
+  templates = PLP.namespace('templates');
+
+  templates['tooltip'] = "<div class=\"slds-popover slds-popover--tooltip slds-nubbin--bottom\" role=\"tooltip\">\n  <div class=\"slds-popover__body\">Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.</div>\n</div> ";
 
 }).call(this);
 ;(function() {

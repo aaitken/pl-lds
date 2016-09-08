@@ -64,8 +64,8 @@ form ".slds-form--inline.slds-m-bottom--medium", ->
           option "nnn"
           option "nnnpm"
 
-table id:"bbv-expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
-  thead id:"bbv-expenses-table-head", ->
+table id:"expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
+  thead "data-view":"expenses-table-head", id:"expenses-table-head", ->
     tr class:"slds-text-heading--label", ->
       for heading in [
         ['25', '<span>Expense Category</span>']
@@ -76,7 +76,7 @@ table id:"bbv-expenses-table", class:"slds-m-bottom--x-large slds-table slds-tab
         ['14.5', "<span>Cap</span>"]]
         th width:"#{heading[0]}%", valign:"top", ->
           div class:"slds-truncate", heading[1]
-  tbody id:"bbv-expenses-table-body", ->
+  tbody id:"expenses-table-body", ->
     tr style:"height: 49px", ->
       td class:"slds-text-heading--label", "OpEx and Stop Totals"      
       td "100"      

@@ -1,14 +1,25 @@
 views = PLP.namespace('views')
 templates = PLP.namespace('templates')
-content = PLP.namespace('content')
 
 class views['expenses-table-head'] extends Backbone.View
 
   initialize: (options = {})->
-    @iconTemplate = _.template(templates['info-icon'])
-    @content = content['expenses-table'].help
-    @render()
+    that = this
+    @InfoIconView = views['info-icon']
+    @ExpensesTableOverrideView = views['expenses-table-override'] 
+    @init()
 
-  render: ->
-    _.each @content, (item, i)=>
-      @$("th:eq(#{parseInt(i+1)})").find('span').after @iconTemplate
+
+  init: ->
+
+    #info icons
+    that = this
+    _.each @$el.find('th:gt(0) span'), (item)->
+      infoIconView = new that.InfoIconView()
+      $(item).after infoIconView.el
+
+    #override
+    expensesTableOverrideView = new @ExpensesTableOverrideView()
+    @$el.find('th:eq(1) span:eq(1)').after expensesTableOverrideView.el
+
+      

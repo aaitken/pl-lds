@@ -2,8 +2,12 @@ views = PLP.namespace('views')
 
 class views['expenses-table-override'] extends Backbone.View
 
+  tagName: 'button'
+  className: 'slds-button'
+  
   initialize: (options = {})->
-    @parent = options.parent
+    @$el.text 'Override'
+    @parent = options.parent || ''
 
   events:
     'click': ->

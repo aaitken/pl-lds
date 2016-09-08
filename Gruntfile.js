@@ -22,7 +22,8 @@ module.exports = function(grunt) {
           {src: 'out/assets/scripts/utils/**/*.js', dest: 'out/assets/scripts/utils.js'},
           {src: 'out/assets/scripts/views/**/*.js', dest: 'out/assets/scripts/views.js'},
           {src: 'out/assets/scripts/content/**/*.js', dest: 'out/assets/scripts/content.js'},
-          {src: 'out/assets/scripts/templates/**/*.js', dest: 'out/assets/scripts/templates.js'}
+          {src: 'out/assets/scripts/templates/**/*.js', dest: 'out/assets/scripts/templates.js'},
+          {src: 'out/assets/styles/views/**/*.css', dest: 'out/assets/styles/views.css'}
         ]
       }
     }

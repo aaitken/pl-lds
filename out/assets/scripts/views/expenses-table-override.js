@@ -12,11 +12,16 @@
       return _Class.__super__.constructor.apply(this, arguments);
     }
 
+    _Class.prototype.tagName = 'button';
+
+    _Class.prototype.className = 'slds-button';
+
     _Class.prototype.initialize = function(options) {
       if (options == null) {
         options = {};
       }
-      return this.parent = options.parent;
+      this.$el.text('Override');
+      return this.parent = options.parent || '';
     };
 
     _Class.prototype.events = {

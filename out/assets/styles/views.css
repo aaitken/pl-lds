@@ -1,0 +1,8 @@
+[data-view="expenses-table-head"] .slds-icon_container {
+  position: absolute;
+  margin: -0.05rem 0 0 0.65rem;
+}
+[data-view="expenses-table-head"] .slds-button {
+  position: absolute;
+  margin: -0.5rem 0 0 2.25rem;
+}
