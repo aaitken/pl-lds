@@ -26,6 +26,19 @@ thead tr {
   color: #16325c;
 }
 
+.plp-right {
+  position: absolute;
+  right: 20px;
+}
+
+.plp-deal-reports-button {
+  margin-top: -6px;
+}
+
+.plp-analysis-level-buttons {
+  margin-top: -29px;
+}
+
 .plp-submenu span {
   display: inline-block;
   margin: 0 3px;

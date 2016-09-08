@@ -5,6 +5,21 @@ layout: 'default'
 ---
 
 
+ul ".slds-m-bottom--x-large.slds-tabs--default__nav", role: "tablist", ->
+  li ".slds-tabs--default__item.slds-text-title--caps", ->
+    a ".slds-tabs--default__link", "Overview"
+  li ".slds-tabs--default__item.slds-text-title--caps.slds-active", ->
+    a ".slds-tabs--default__link", "Analysis"
+  li ".slds-tabs--default__item.slds-text-title--caps", ->
+    a ".slds-tabs--default__link", "Approval"
+
+div class:"slds-m-bottom--large", ->
+  h1 class:"slds-text-heading--medium", "Analysis 1"
+  div class:"slds-button-group plp-right plp-analysis-level-buttons", role: "group", ->
+    button ".slds-button.slds-button--neutral", "Refresh"
+    button ".slds-button.slds-button--neutral", "Edit"
+    button ".slds-button.slds-button--neutral", "Save" 
+
 div class:"slds-m-bottom--x-large plp-kpi-container", ->
   img src:"/assets/images/KPIs.png" 
   
@@ -25,6 +40,11 @@ div class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
   a "Guarantees"
   span "|"
   a "Options"
+
+  button class:"plp-deal-reports-button plp-right slds-button slds-button--neutral", ->
+    text "Deal Reports"
+    svg "aria-hidden":"true", class:"slds-button__icon slds-button__icon--right", ->
+      use "xlink:href":"/assets/icons/utility-sprite/svg/symbols.svg#down"
 
 h1 class:"slds-text-heading--small slds-m-bottom--medium", style:"font-weight:regular" , "Settings and Selections"
 

@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="/assets/styles/app.css" media="all" />
   </head>
   <body>
+<ul class="slds-m-bottom--x-large slds-tabs--default__nav" role="tablist">
+  <li class="slds-tabs--default__item slds-text-title--caps">
+    <a class="slds-tabs--default__link">Overview</a>
+  </li>
+  <li class="slds-tabs--default__item slds-text-title--caps slds-active">
+    <a class="slds-tabs--default__link">Analysis</a>
+  </li>
+  <li class="slds-tabs--default__item slds-text-title--caps">
+    <a class="slds-tabs--default__link">Approval</a>
+  </li>
+</ul>
+<div class="slds-m-bottom--large">
+  <h1 class="slds-text-heading--medium">Analysis 1</h1>
+  <div class="slds-button-group plp-right plp-analysis-level-buttons" role="group">
+    <button class="slds-button slds-button--neutral">Refresh</button>
+    <button class="slds-button slds-button--neutral">Edit</button>
+    <button class="slds-button slds-button--neutral">Save</button>
+  </div>
+</div>
 <div class="slds-m-bottom--x-large plp-kpi-container">
   <img src="/assets/images/KPIs.png" />
 </div>
@@ -25,6 +44,11 @@
   <a>Guarantees</a>
   <span>|</span>
   <a>Options</a>
+  <button class="plp-deal-reports-button plp-right slds-button slds-button--neutral">
+Deal Reports    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--right">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+    </svg>
+  </button>
 </div>
 <h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Settings and Selections</h1>
 <form class="slds-form--inline slds-m-bottom--medium">
