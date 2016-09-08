@@ -321,15 +321,24 @@
     };
 
     _Class.prototype.showTip = function() {
-      var offset;
       this.to = null;
-      offset = this.getOffset();
+      this.offset = this.getOffset();
       this.tooltipView = new this.TooltipView({
         tip: this.tip
       });
       views['body'].singleton().$el.append(this.tooltipView.el);
-      this.tooltipView.$el.attr('style', "position:absolute; left:" + (offset.left - 151) + "px; top:" + (parseInt(offset.top + 35)) + "px;");
+      this.position();
       return this.tooltipView.$el.fadeIn(100);
+    };
+
+    _Class.prototype.position = function() {
+      if (parseInt(this.offset.left - 151 + this.tooltipView.$el.width()) > views['body'].singleton().$el.width()) {
+        this.tooltipView.$el.attr('style', "position:absolute; left:" + (this.offset.left - 280) + "px; top:" + (parseInt(this.offset.top + 35)) + "px;");
+        return this.tooltipView.$el.addClass('slds-nubbin--top-right');
+      } else {
+        this.tooltipView.$el.attr('style', "position:absolute; left:" + (this.offset.left - 151) + "px; top:" + (parseInt(this.offset.top + 35)) + "px;");
+        return this.tooltipView.$el.addClass('slds-nubbin--top');
+      }
     };
 
     _Class.prototype.killTip = function() {
@@ -368,7 +377,7 @@
     _Class.prototype.tagName = 'div';
 
     _Class.prototype.attributes = {
-      "class": 'slds-popover slds-popover--tooltip slds-nubbin--top',
+      "class": 'slds-popover slds-popover--tooltip',
       role: 'tooltip'
     };
 

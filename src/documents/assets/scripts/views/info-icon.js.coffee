@@ -26,11 +26,20 @@ class views['info-icon'] extends Backbone.View
   
   showTip: ->
     @to = null
-    offset = @getOffset()
+    @offset = @getOffset()
     @tooltipView = new @TooltipView {tip: @tip}
     views['body'].singleton().$el.append @tooltipView.el
-    @tooltipView.$el.attr('style', "position:absolute; left:#{offset.left-151}px; top:#{parseInt(offset.top+35)}px;")
+    @position()
     @tooltipView.$el.fadeIn(100)
+
+  position: ->
+    if parseInt(@offset.left-151 + @tooltipView.$el.width()) > views['body'].singleton().$el.width()
+      @tooltipView.$el.attr('style', "position:absolute; left:#{@offset.left-280}px; top:#{parseInt(@offset.top+35)}px;")
+      @tooltipView.$el.addClass('slds-nubbin--top-right') 
+    else
+      @tooltipView.$el.attr('style', "position:absolute; left:#{@offset.left-151}px; top:#{parseInt(@offset.top+35)}px;")
+      @tooltipView.$el.addClass('slds-nubbin--top')
+    
 
   killTip: ->
     if @to

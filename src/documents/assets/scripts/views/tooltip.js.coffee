@@ -5,7 +5,7 @@ class views['tooltip'] extends Backbone.View
 
   tagName: 'div'
   attributes:
-    class: 'slds-popover slds-popover--tooltip slds-nubbin--top'
+    class: 'slds-popover slds-popover--tooltip'
     role: 'tooltip'
 
   initialize: (options = {})->
