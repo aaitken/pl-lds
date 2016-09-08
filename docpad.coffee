@@ -3,6 +3,10 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
+
+  plugins:
+    grunt:
+      writeAfter: []
   
 	# ...
 }

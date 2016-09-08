@@ -6,17 +6,11 @@ styles: [
   '/assets/styles/app.css']
 
 scripts: [
-  '/assets/scripts/vendor/jquery-3.1.0.js'
-  '/assets/scripts/vendor/underscore-1.8.3.js'
-  '/assets/scripts/vendor/backbone-1.3.3.js'
-  '/assets/scripts/utils/namespacer.js'
-  '/assets/scripts/content/expenses-table.js'
-  '/assets/scripts/views/expenses-table.js'
-  '/assets/scripts/views/expenses-table-body-row.js'
-  '/assets/scripts/views/override.js'
-  '/assets/scripts/templates/expenses-table-body-row.js'
-  '/assets/scripts/templates/text-field.js'
-  '/assets/scripts/templates/yes-no-select.js'
+  '/assets/scripts/vendors.js'
+  '/assets/scripts/utils.js'
+  '/assets/scripts/views.js'
+  '/assets/scripts/content.js'
+  '/assets/scripts/templates.js'
   '/assets/scripts/app.js']
 
 ---

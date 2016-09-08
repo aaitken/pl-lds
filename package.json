@@ -9,9 +9,11 @@
     "docpad-plugin-coffeescript": "~2.5.0",
     "docpad-plugin-cson": "~2.2.0",
     "docpad-plugin-frontend": "~2.1.1",
+    "docpad-plugin-grunt": "~2.2.1",
     "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-raw": "~2.4.1",
-    "docpad-plugin-sass": "~2.7.4"
+    "docpad-plugin-sass": "~2.7.4",
+    "grunt-contrib-concat": "^1.0.1"
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {
