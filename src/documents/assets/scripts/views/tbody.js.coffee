@@ -1,5 +1,5 @@
-views = PLP.views
-templates = PLP.templates
+views = PLP.namespace('views')
+templates = PLP.namespace('templates')
 
 class views.Tbody extends Backbone.View
 

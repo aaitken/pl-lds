@@ -1,4 +1,4 @@
-views = window.PLP.views
+views = PLP.namespace('views')
 
 class views.Table extends Backbone.View
 

@@ -1,4 +1,4 @@
-views = window.PLP.views
+views = PLP.namespace('views')
 
 class views.Override extends Backbone.View
 
