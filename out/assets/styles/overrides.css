@@ -5,3 +5,17 @@
 .slds-popover--tooltip {
   display: none;
 }
+
+.slds-page-header {
+  width: calc(100% - 56px);
+  position: relative;
+  left: 56px;
+}
+
+.slds-page-header__detail-row {
+  background-color: #f7f9fb;
+}
+
+.slds-page-header__detail-block {
+  max-width: 100%;
+}

@@ -33,7 +33,7 @@ class views['info-icon'] extends Backbone.View
     @tooltipView.$el.fadeIn(100)
 
   position: ->
-    if parseInt(@offset.left-151 + @tooltipView.$el.width()) > views['body'].singleton().$el.width()
+    if parseInt(@offset.left-151 + @tooltipView.$el.width()) > views['body'].singleton().$el.width() - 30
       @tooltipView.$el.attr('style', "position:absolute; left:#{@offset.left-280}px; top:#{parseInt(@offset.top+35)}px;")
       @tooltipView.$el.addClass('slds-nubbin--top-right') 
     else

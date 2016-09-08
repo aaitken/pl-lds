@@ -332,7 +332,7 @@
     };
 
     _Class.prototype.position = function() {
-      if (parseInt(this.offset.left - 151 + this.tooltipView.$el.width()) > views['body'].singleton().$el.width()) {
+      if (parseInt(this.offset.left - 151 + this.tooltipView.$el.width()) > views['body'].singleton().$el.width() - 30) {
         this.tooltipView.$el.attr('style', "position:absolute; left:" + (this.offset.left - 280) + "px; top:" + (parseInt(this.offset.top + 35)) + "px;");
         return this.tooltipView.$el.addClass('slds-nubbin--top-right');
       } else {
