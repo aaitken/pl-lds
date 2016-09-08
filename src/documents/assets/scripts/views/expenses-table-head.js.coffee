@@ -6,10 +6,10 @@ class views['expenses-table-head'] extends Backbone.View
     that = this
     @InfoIconView = views['info-icon']
     @ExpensesTableOverrideView = views['expenses-table-override'] 
-    @init()
+    @writeChildren()
 
 
-  init: ->
+  writeChildren: ->
 
     #info icons
     that = this

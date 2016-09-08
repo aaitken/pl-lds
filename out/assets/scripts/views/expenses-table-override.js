@@ -16,19 +16,15 @@
 
     _Class.prototype.className = 'slds-button';
 
-    _Class.prototype.initialize = function(options) {
-      if (options == null) {
-        options = {};
-      }
-      this.$el.text('Override');
-      return this.parent = options.parent || '';
+    _Class.prototype.initialize = function() {
+      return this.$el.text('Override');
     };
 
     _Class.prototype.events = {
       'click': function() {
         if (this.$el.text() === "Override") {
           this.$el.text("Revert");
-          return this.parent.tbody.makeOpexEditable();
+          return views['expenses-table'].singleton().hide();
         } else {
           this.$el.text("Override");
           return this.parent.tbody.makeOpexRO();

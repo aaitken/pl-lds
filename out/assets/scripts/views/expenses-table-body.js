@@ -1,13 +1,9 @@
 (function() {
-  var content, snippets, templates, views,
+  var content, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
   views = PLP.namespace('views');
-
-  templates = PLP.namespace('templates');
-
-  snippets = PLP.namespace('snippets');
 
   content = PLP.namespace('content');
 
@@ -22,21 +18,21 @@
       if (options == null) {
         options = {};
       }
-      this.rowTemplate = _.template(templates['expenses-table-body-row']);
-      this.inputSnippet = _.template(snippets['text-field']);
-      this.selectSnippet = _.template(snippets['yes-no-select']);
-      this.content = content['expenses-table'].tbody;
-      return this.render();
+      this.rowView = views['expenses-table-body-row'];
+      this.bodyContent = content['expenses-table'].tbody;
+      return this.writeChildren();
     };
 
-    _Class.prototype.render = function() {
-      return _.each(this.content.reverse(), (function(_this) {
+    _Class.prototype.writeChildren = function() {
+      var that;
+      that = this;
+      return _.each(this.bodyContent.reverse(), (function(_this) {
         return function(item) {
-          _this.$el.prepend(_this.rowTemplate({
+          var rowView;
+          rowView = new _this.rowView({
             content: item
-          }));
-          _this.$('td:eq(4)').html(_this.inputSnippet);
-          return _this.$('td:eq(2), td:eq(3), td:eq(5)').html(_this.selectSnippet);
+          });
+          return _this.$el.prepend(rowView.el);
         };
       })(this));
     };

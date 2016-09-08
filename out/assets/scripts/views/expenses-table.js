@@ -26,6 +26,10 @@
       });
     };
 
+    _Class.prototype.hide = function() {
+      return this.$el.hide();
+    };
+
     return _Class;
 
   })(Backbone.View);

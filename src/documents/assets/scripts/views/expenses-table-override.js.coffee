@@ -5,15 +5,14 @@ class views['expenses-table-override'] extends Backbone.View
   tagName: 'button'
   className: 'slds-button'
   
-  initialize: (options = {})->
+  initialize: ->
     @$el.text 'Override'
-    @parent = options.parent || ''
 
   events:
     'click': ->
       if @$el.text() is "Override"
         @$el.text "Revert"
-        @parent.tbody.makeOpexEditable() 
+        views['expenses-table'].singleton().hide()
       else
         @$el.text "Override"
         @parent.tbody.makeOpexRO()

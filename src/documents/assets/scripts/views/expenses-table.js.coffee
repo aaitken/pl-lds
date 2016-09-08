@@ -11,3 +11,6 @@ class views['expenses-table'] extends Backbone.View
       el: @$('#expenses-table-head')}
     @tbody = new views['expenses-table-body'] {
       el: @$('#expenses-table-body')}
+
+  hide: ->
+    @$el.hide()

@@ -20,10 +20,10 @@
       that = this;
       this.InfoIconView = views['info-icon'];
       this.ExpensesTableOverrideView = views['expenses-table-override'];
-      return this.init();
+      return this.writeChildren();
     };
 
-    _Class.prototype.init = function() {
+    _Class.prototype.writeChildren = function() {
       var expensesTableOverrideView, that;
       that = this;
       _.each(this.$el.find('th:gt(0) span'), function(item) {
