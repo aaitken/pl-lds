@@ -21,13 +21,21 @@
       this.thead = new views['expenses-table-head']({
         el: this.$('#expenses-table-head')
       });
-      return this.tbody = new views['expenses-table-body']({
+      return this.tbody = views['expenses-table-body'].singleton({
         el: this.$('#expenses-table-body')
       });
     };
 
-    _Class.prototype.hide = function() {
-      return this.$el.hide();
+    _Class.prototype.override = function() {
+      return _.each(this.tbody.rowViews, function(item) {
+        return item.makeOpexEditable();
+      });
+    };
+
+    _Class.prototype.revert = function() {
+      return _.each(this.tbody.rowViews, function(item) {
+        return item.makeOpexRO();
+      });
     };
 
     return _Class;

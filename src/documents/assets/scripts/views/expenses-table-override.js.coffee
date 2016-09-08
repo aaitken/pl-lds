@@ -12,7 +12,7 @@ class views['expenses-table-override'] extends Backbone.View
     'click': ->
       if @$el.text() is "Override"
         @$el.text "Revert"
-        views['expenses-table'].singleton().hide()
+        views['expenses-table'].singleton().override()
       else
         @$el.text "Override"
-        @parent.tbody.makeOpexRO()
+        views['expenses-table'].singleton().revert()

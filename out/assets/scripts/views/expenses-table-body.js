@@ -14,25 +14,30 @@
       return _Class.__super__.constructor.apply(this, arguments);
     }
 
+    _Class.singleton = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      return this.instance != null ? this.instance : this.instance = new this(options);
+    };
+
     _Class.prototype.initialize = function(options) {
       if (options == null) {
         options = {};
       }
-      this.rowView = views['expenses-table-body-row'];
+      this.RowView = views['expenses-table-body-row'];
+      this.rowViews = [];
       this.bodyContent = content['expenses-table'].tbody;
       return this.writeChildren();
     };
 
     _Class.prototype.writeChildren = function() {
-      var that;
-      that = this;
       return _.each(this.bodyContent.reverse(), (function(_this) {
         return function(item) {
-          var rowView;
-          rowView = new _this.rowView({
+          _this.rowViews.push(new _this.RowView({
             content: item
-          });
-          return _this.$el.prepend(rowView.el);
+          }));
+          return _this.$el.prepend(_this.rowViews[_this.rowViews.length - 1].el);
         };
       })(this));
     };

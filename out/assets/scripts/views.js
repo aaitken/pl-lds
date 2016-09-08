@@ -21,11 +21,13 @@
     _Class.prototype.tagName = 'tr';
 
     _Class.prototype.initialize = function(options) {
+      this.$opexCell = null;
       this.content = options.content;
       this.template = _.template(templates['expenses-table-body-row']);
       this.selectSnippet = _.template(snippets['yes-no-select']);
-      this.inputSnippet = _.template(snippets['text-field']);
-      return this.render();
+      this.inputTemplate = _.template(templates['text-field']);
+      this.render();
+      return this.attachData();
     };
 
     _Class.prototype.render = function() {
@@ -34,8 +36,27 @@
       $el.html(this.template({
         content: this.content
       }));
+      this.$opexCell = $el.find('td:eq(1)');
       $el.find('td:eq(2), td:eq(3), td:eq(5)').html(this.selectSnippet);
-      return $el.find('td:eq(4)').html(this.inputSnippet);
+      return $el.find('td:eq(4)').html(this.inputTemplate({
+        content: ''
+      }));
+    };
+
+    _Class.prototype.attachData = function() {
+      return this.$opexCell.data({
+        val: this.$opexCell.text().trim()
+      });
+    };
+
+    _Class.prototype.makeOpexEditable = function() {
+      return this.$opexCell.html(this.inputTemplate({
+        content: this.$opexCell.data('val')
+      }));
+    };
+
+    _Class.prototype.makeOpexRO = function() {
+      return this.$opexCell.html(this.$opexCell.data('val'));
     };
 
     return _Class;
@@ -59,25 +80,30 @@
       return _Class.__super__.constructor.apply(this, arguments);
     }
 
+    _Class.singleton = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      return this.instance != null ? this.instance : this.instance = new this(options);
+    };
+
     _Class.prototype.initialize = function(options) {
       if (options == null) {
         options = {};
       }
-      this.rowView = views['expenses-table-body-row'];
+      this.RowView = views['expenses-table-body-row'];
+      this.rowViews = [];
       this.bodyContent = content['expenses-table'].tbody;
       return this.writeChildren();
     };
 
     _Class.prototype.writeChildren = function() {
-      var that;
-      that = this;
       return _.each(this.bodyContent.reverse(), (function(_this) {
         return function(item) {
-          var rowView;
-          rowView = new _this.rowView({
+          _this.rowViews.push(new _this.RowView({
             content: item
-          });
-          return _this.$el.prepend(rowView.el);
+          }));
+          return _this.$el.prepend(_this.rowViews[_this.rowViews.length - 1].el);
         };
       })(this));
     };
@@ -155,10 +181,10 @@
       'click': function() {
         if (this.$el.text() === "Override") {
           this.$el.text("Revert");
-          return views['expenses-table'].singleton().hide();
+          return views['expenses-table'].singleton().override();
         } else {
           this.$el.text("Override");
-          return this.parent.tbody.makeOpexRO();
+          return views['expenses-table'].singleton().revert();
         }
       }
     };
@@ -191,13 +217,21 @@
       this.thead = new views['expenses-table-head']({
         el: this.$('#expenses-table-head')
       });
-      return this.tbody = new views['expenses-table-body']({
+      return this.tbody = views['expenses-table-body'].singleton({
         el: this.$('#expenses-table-body')
       });
     };
 
-    _Class.prototype.hide = function() {
-      return this.$el.hide();
+    _Class.prototype.override = function() {
+      return _.each(this.tbody.rowViews, function(item) {
+        return item.makeOpexEditable();
+      });
+    };
+
+    _Class.prototype.revert = function() {
+      return _.each(this.tbody.rowViews, function(item) {
+        return item.makeOpexRO();
+      });
     };
 
     return _Class;

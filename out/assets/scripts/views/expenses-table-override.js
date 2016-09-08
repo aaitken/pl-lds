@@ -24,10 +24,10 @@
       'click': function() {
         if (this.$el.text() === "Override") {
           this.$el.text("Revert");
-          return views['expenses-table'].singleton().hide();
+          return views['expenses-table'].singleton().override();
         } else {
           this.$el.text("Override");
-          return this.parent.tbody.makeOpexRO();
+          return views['expenses-table'].singleton().revert();
         }
       }
     };

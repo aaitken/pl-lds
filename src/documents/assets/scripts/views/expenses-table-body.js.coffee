@@ -3,13 +3,16 @@ content = PLP.namespace('content')
 
 class views['expenses-table-body'] extends Backbone.View
 
+  @singleton = (options = {})->
+    @instance ?= new this(options)
+
   initialize: (options = {})->
-    @rowView = views['expenses-table-body-row']
+    @RowView = views['expenses-table-body-row']
+    @rowViews = []
     @bodyContent = content['expenses-table'].tbody
     @writeChildren()
     
   writeChildren: ->
-    that = this
     _.each @bodyContent.reverse(), (item)=>
-      rowView = new @rowView({content: item})
-      @$el.prepend rowView.el
+      @rowViews.push new @RowView({content: item})
+      @$el.prepend @rowViews[@rowViews.length - 1].el
