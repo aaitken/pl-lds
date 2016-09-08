@@ -19,18 +19,56 @@
     _Class.prototype.className = 'slds-icon_container';
 
     _Class.prototype.events = {
-      click: function() {
-        return alert('info');
-      }
+      mouseenter: function() {
+        return this.to = setTimeout(((function(_this) {
+          return function() {
+            return _this.showTip();
+          };
+        })(this)), 300);
+      },
+      mouseleave: 'killTip'
     };
 
-    _Class.prototype.initialize = function() {
+    _Class.prototype.initialize = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      this.tip = options.tip;
       this.snippet = _.template(snippets['info-icon']);
+      this.TooltipView = views['tooltip'];
       return this.render();
     };
 
     _Class.prototype.render = function() {
       return this.$el.html(this.snippet());
+    };
+
+    _Class.prototype.getOffset = function() {
+      return this.$el.offset();
+    };
+
+    _Class.prototype.showTip = function() {
+      var offset;
+      this.to = null;
+      offset = this.getOffset();
+      this.tooltipView = new this.TooltipView({
+        tip: this.tip
+      });
+      views['body'].singleton().$el.append(this.tooltipView.el);
+      this.tooltipView.$el.attr('style', "position:absolute; left:" + (offset.left - 151) + "px; top:" + (parseInt(offset.top + 35)) + "px;");
+      return this.tooltipView.$el.fadeIn(100);
+    };
+
+    _Class.prototype.killTip = function() {
+      if (this.to) {
+        return clearTimeout(this.to);
+      } else {
+        return this.tooltipView.$el.fadeOut(100, (function(_this) {
+          return function() {
+            return _this.tooltipView.remove();
+          };
+        })(this));
+      }
     };
 
     return _Class;
