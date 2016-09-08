@@ -1,4 +1,4 @@
 (function() {
-  new PLP.views['expenses-table']();
+  PLP.views['expenses-table'].singleton();
 
 }).call(this);

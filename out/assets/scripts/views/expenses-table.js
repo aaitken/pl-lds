@@ -12,6 +12,10 @@
       return _Class.__super__.constructor.apply(this, arguments);
     }
 
+    _Class.singleton = function() {
+      return this.instance != null ? this.instance : this.instance = new this();
+    };
+
     _Class.prototype.initialize = function() {
       this.setElement($('#expenses-table'));
       this.thead = new views['expenses-table-head']({

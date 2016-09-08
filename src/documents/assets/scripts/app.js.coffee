@@ -1,1 +1,1 @@
-new PLP.views['expenses-table']()
+PLP.views['expenses-table'].singleton()
