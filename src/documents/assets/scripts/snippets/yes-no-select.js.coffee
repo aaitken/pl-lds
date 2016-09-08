@@ -1,6 +1,6 @@
-templates = PLP.namespace('templates')
+snippets = PLP.namespace('snippets')
 
-templates['yes-no-select'] = """
+snippets['yes-no-select'] = """
   <div class="slds-form-element__control">
     <div class="slds-select_container">
       <select id="select-01" class="slds-select">

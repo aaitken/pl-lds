@@ -11,8 +11,8 @@ class views['info-icon'] extends Backbone.View
       alert 'info'
 
   initialize: ->
-    @template = _.template(snippets['info-icon'])
+    @snippet = _.template(snippets['info-icon'])
     @render()
 
   render: ->
-    @$el.html @template()
+    @$el.html @snippet()

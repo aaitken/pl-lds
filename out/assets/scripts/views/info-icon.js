@@ -25,12 +25,12 @@
     };
 
     _Class.prototype.initialize = function() {
-      this.template = _.template(snippets['info-icon']);
+      this.snippet = _.template(snippets['info-icon']);
       return this.render();
     };
 
     _Class.prototype.render = function() {
-      return this.$el.html(this.template());
+      return this.$el.html(this.snippet());
     };
 
     return _Class;
