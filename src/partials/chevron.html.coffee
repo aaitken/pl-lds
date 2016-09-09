@@ -12,7 +12,7 @@ text """
               </svg>
               <span class="slds-assistive-text">Stage Complete</span>
             </span>
-            <span class="slds-tabs--path__title">Contacted</span>
+            <span class="slds-tabs--path__title">D - Identify</span>
           </a>
         </li>
         <li class="slds-tabs--path__item slds-is-complete" role="presentation">
@@ -23,7 +23,7 @@ text """
               </svg>
               <span class="slds-assistive-text">Stage Complete</span>
             </span>
-            <span class="slds-tabs--path__title">Open</span>
+            <span class="slds-tabs--path__title">D - Evaluate</span>
           </a>
         </li>
         <li class="slds-tabs--path__item slds-is-current" role="presentation">
@@ -33,7 +33,7 @@ text """
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
               </svg>
             </span>
-            <span class="slds-tabs--path__title">Unqualified</span>
+            <span class="slds-tabs--path__title">C - Propose</span>
           </a>
         </li>
         <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
@@ -43,7 +43,7 @@ text """
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
               </svg>
             </span>
-            <span class="slds-tabs--path__title">Nurturing</span>
+            <span class="slds-tabs--path__title">B - Agree</span>
           </a>
         </li>
         <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
@@ -53,7 +53,7 @@ text """
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
               </svg>
             </span>
-            <span class="slds-tabs--path__title">Closed</span>
+            <span class="slds-tabs--path__title">A - Finalize</span>
           </a>
         </li>
       </ul>

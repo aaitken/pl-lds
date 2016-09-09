@@ -15,7 +15,7 @@ class views['expenses-table-head'] extends Backbone.View
 
     #info icons
     that = this
-    _.each @$el.find('th:gt(0) span'), (item, i)->
+    _.each @$el.find('th:gt(0) span:nth-child(1)'), (item, i)->
       infoIconView = new that.InfoIconView({tip: that.tipsContent[i]})
       $(item).after infoIconView.el
 

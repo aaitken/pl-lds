@@ -19,14 +19,30 @@ div class:"plp-page-body", ->
       a ".slds-tabs--default__link", "Analysis"
     li ".slds-tabs--default__item.slds-text-title--caps", ->
       a ".slds-tabs--default__link", "Approval"
+  
+  #text """
+      #<div class="slds-form-element">
+  #<label class="slds-checkbox--toggle slds-grid">
+    #<span class="slds-form-element__label slds-m-bottom--none">Toggle Label</span>
+    #<input name="checkbox" type="checkbox" aria-describedby="toggle-desc" />
+    #<span id="toggle-desc" class="slds-checkbox--faux_container" aria-live="assertive">
+      #<span class="slds-checkbox--faux"></span>
+      #<span class="slds-checkbox--on">Enabled</span>
+      #<span class="slds-checkbox--off">Disabled</span>
+    #</span>
+  #</label>
+#</div>"""
+
 
   div id:"analysis-title", class:"slds-m-bottom--large", ->
     h1 class:"slds-text-heading--medium", ->
       span "Analysis 1"
-    div class:"slds-button-group plp-right plp-analysis-level-buttons", role: "group", ->
-      button ".slds-button.slds-button--neutral", "Refresh"
-      button ".slds-button.slds-button--neutral", "Edit"
-      button ".slds-button.slds-button--neutral", "Save"
+    div class:"plp-right plp-analysis-level-buttons", ->
+      button style:"margin-right:1rem", class:"slds-button slds-button--neutral", "Add New Scenario"
+      button class:"slds-button slds-button--icon-border", ->
+        svg class:"slds-button__icon slds-button__icon", ->
+          use "xmlns:xlink":"http://www.w3.org/1999/xlink", "xlink:href":"/assets/icons/utility-sprite/svg/symbols.svg#email"
+      button class:"slds-button slds-button--brand", "Save Analysis"
 
   div class:"slds-m-bottom--x-large plp-kpi-container", ->
     img src:"/assets/images/KPIs.png"
@@ -77,7 +93,7 @@ div class:"plp-page-body", ->
       tr class:"slds-text-heading--label", ->
         for heading in [
           ['25', '<span>Expense Category</span>']
-          ['17', "<span>Budgeted</span><br>OpEx"]
+          ['17', "<span>Budgeted</span><br><span>OpEx</span>"]
           ['14.5', "<span>Recoverable</span><br>Outside Rent"]
           ['14.5', "<span>Expense Stop</span>"]
           ['14.5', "<span>Stop Amount</span>"]

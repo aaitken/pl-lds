@@ -7,6 +7,12 @@ thead tr {
   background-color: #f4f6f9;
 }
 
+button.slds-button:focus {
+  outline: 0;
+  outline: none;
+  box-shadow: none;
+}
+
 .plp-dummy-nav {
   position: fixed;
   height: 100%;
@@ -51,10 +57,14 @@ thead tr {
 }
 
 .plp-analysis-level-buttons {
-  margin-top: -29px;
+  margin-top: -34px;
 }
 
 .plp-submenu span {
   display: inline-block;
   margin: 0 3px;
+}
+
+.plp-highlight {
+  color: #b20000;
 }

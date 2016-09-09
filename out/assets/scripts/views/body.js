@@ -25,7 +25,8 @@
     };
 
     _Class.prototype.closeAll = function() {
-      return views['analysis-title-button'].singleton().$el.removeClass('slds-is-open');
+      views['analysis-title-menu'].singleton().$el.removeClass('slds-is-open');
+      return views['analysis-title-settings'].singleton().$el.removeClass('slds-is-open');
     };
 
     return _Class;

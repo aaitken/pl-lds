@@ -1,0 +1,9 @@
+[data-view="analysis-title-menu"] {
+  margin-left: 1rem;
+  position: relative;
+  top: -2px;
+}
+[data-view="analysis-title-menu"] .slds-dropdown__item span span {
+  display: inline-block;
+  vertical-align: top;
+}

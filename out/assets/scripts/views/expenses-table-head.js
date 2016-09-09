@@ -29,7 +29,7 @@
     _Class.prototype.writeChildren = function() {
       var expensesTableOverrideView, that;
       that = this;
-      _.each(this.$el.find('th:gt(0) span'), function(item, i) {
+      _.each(this.$el.find('th:gt(0) span:nth-child(1)'), function(item, i) {
         var infoIconView;
         infoIconView = new that.InfoIconView({
           tip: that.tipsContent[i]

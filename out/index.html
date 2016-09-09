@@ -45,7 +45,7 @@
             </svg>
             <span class="slds-assistive-text">Stage Complete</span>
           </span>
-          <span class="slds-tabs--path__title">Contacted</span>
+          <span class="slds-tabs--path__title">D - Identify</span>
         </a>
       </li>
       <li class="slds-tabs--path__item slds-is-complete" role="presentation">
@@ -56,7 +56,7 @@
             </svg>
             <span class="slds-assistive-text">Stage Complete</span>
           </span>
-          <span class="slds-tabs--path__title">Open</span>
+          <span class="slds-tabs--path__title">D - Evaluate</span>
         </a>
       </li>
       <li class="slds-tabs--path__item slds-is-current" role="presentation">
@@ -66,7 +66,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
             </svg>
           </span>
-          <span class="slds-tabs--path__title">Unqualified</span>
+          <span class="slds-tabs--path__title">C - Propose</span>
         </a>
       </li>
       <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
@@ -76,7 +76,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
             </svg>
           </span>
-          <span class="slds-tabs--path__title">Nurturing</span>
+          <span class="slds-tabs--path__title">B - Agree</span>
         </a>
       </li>
       <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
@@ -86,7 +86,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
             </svg>
           </span>
-          <span class="slds-tabs--path__title">Closed</span>
+          <span class="slds-tabs--path__title">A - Finalize</span>
         </a>
       </li>
     </ul>
@@ -110,10 +110,14 @@
     <h1 class="slds-text-heading--medium">
       <span>Analysis 1</span>
     </h1>
-    <div class="slds-button-group plp-right plp-analysis-level-buttons" role="group">
-      <button class="slds-button slds-button--neutral">Refresh</button>
-      <button class="slds-button slds-button--neutral">Edit</button>
-      <button class="slds-button slds-button--neutral">Save</button>
+    <div class="plp-right plp-analysis-level-buttons">
+      <button style="margin-right:1rem" class="slds-button slds-button--neutral">Add New Scenario</button>
+      <button class="slds-button slds-button--icon-border">
+        <svg class="slds-button__icon slds-button__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#email"></use>
+        </svg>
+      </button>
+      <button class="slds-button slds-button--brand">Save Analysis</button>
     </div>
   </div>
   <div class="slds-m-bottom--x-large plp-kpi-container">
@@ -171,7 +175,7 @@ Deal Reports      <svg aria-hidden="true" class="slds-button__icon slds-button__
           <div class="slds-truncate"><span>Expense Category</span></div>
         </th>
         <th width="17%" valign="top">
-          <div class="slds-truncate"><span>Budgeted</span><br>OpEx</div>
+          <div class="slds-truncate"><span>Budgeted</span><br><span>OpEx</span></div>
         </th>
         <th width="14.5%" valign="top">
           <div class="slds-truncate"><span>Recoverable</span><br>Outside Rent</div>

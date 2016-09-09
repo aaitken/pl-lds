@@ -1,6 +1,6 @@
 snippets = PLP.namespace('snippets')
 
-snippets['analysis-title-button'] = """
+snippets['analysis-title-menu'] = """
   <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true">
     <svg aria-hidden="true" class="slds-button__icon">
       <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
@@ -41,7 +41,7 @@ snippets['analysis-title-button'] = """
           <svg aria-hidden="true" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
               <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
             </svg>
-          New Analysis</span>
+          Create New Analysis</span>
         </a>
       </li>
     </ul>

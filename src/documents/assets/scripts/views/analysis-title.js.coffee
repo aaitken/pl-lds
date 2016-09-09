@@ -8,8 +8,11 @@ class views['analysis-title'] extends Backbone.View
 
   initialize: ->
     @setElement $('#analysis-title')
-    @button = views['analysis-title-button'].singleton()
+    @menu = views['analysis-title-menu'].singleton()
+    @settings = views['analysis-title-settings'].singleton()
     @render()
 
   render: ->
-    @$el.find('h1 span').after @button.el
+    @$el.find('h1 span').after @menu.el
+    @menu.$el.after @settings.el
+    

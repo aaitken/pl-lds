@@ -23,3 +23,13 @@
 .slds-popover--tooltip {
   opacity: 0.9;
 }
+
+.slds-button.slds-button--brand.slds-path__mark-complete.slds-no-flex.slds-m-horizontal--small {
+  color: #0070d2;
+  border: 1px solid #e0e5ee;
+  background-color: #e0e5ee;
+  margin-right: 0;
+}
+.slds-button.slds-button--brand.slds-path__mark-complete.slds-no-flex.slds-m-horizontal--small:hover {
+  background-color: #d8dde6;
+}

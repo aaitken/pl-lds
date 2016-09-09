@@ -1,9 +1,17 @@
-[data-view="analysis-title-button"] {
-  margin-left: 0.75rem;
+[data-view="analysis-title-menu"] {
+  margin-left: 1rem;
+  position: relative;
+  top: -2px;
 }
-[data-view="analysis-title-button"] .slds-dropdown__item span span {
+[data-view="analysis-title-menu"] .slds-dropdown__item span span {
   display: inline-block;
   vertical-align: top;
+}
+
+[data-view="analysis-title-settings"] {
+  margin-left: 0.5rem;
+  position: relative;
+  top: -2px;
 }
 
 [data-view="expenses-table-head"] .slds-icon_container {

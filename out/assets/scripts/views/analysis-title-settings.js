@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['analysis-title-button'] = (function(superClass) {
+  views['analysis-title-settings'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -22,17 +22,19 @@
 
     _Class.prototype.attributes = {
       "class": 'slds-dropdown-trigger slds-dropdown-trigger--click',
-      'data-view': 'analysis-title-button'
+      'data-view': 'analysis-title-settings'
     };
 
     _Class.prototype.events = {
       click: function() {
+        this.bodyView.closeAll();
         return this.toggleMenu(event);
       }
     };
 
     _Class.prototype.initialize = function() {
-      this.snippet = _.template(snippets['analysis-title-button']);
+      this.snippet = _.template(snippets['analysis-title-settings']);
+      this.bodyView = views['body'].singleton();
       return this.render();
     };
 

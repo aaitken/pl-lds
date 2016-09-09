@@ -22,12 +22,18 @@
 
     _Class.prototype.events = {
       'click': function() {
+        var $spans;
+        $spans = this.$el.parent().find('span:eq(0), span:eq(2)');
         if (this.$el.text() === "Override") {
           this.$el.text("Revert");
-          return views['expenses-table'].singleton().override();
+          views['expenses-table'].singleton().override();
+          $($spans[0]).text('Override');
+          return $spans.addClass('plp-highlight');
         } else {
           this.$el.text("Override");
-          return views['expenses-table'].singleton().revert();
+          views['expenses-table'].singleton().revert();
+          $($spans[0]).text('Budgeted');
+          return $spans.removeClass('plp-highlight');
         }
       }
     };
