@@ -20,6 +20,14 @@
       return this.setElement('body');
     };
 
+    _Class.prototype.events = {
+      click: 'closeAll'
+    };
+
+    _Class.prototype.closeAll = function() {
+      return views['analysis-title-button'].singleton().$el.removeClass('slds-is-open');
+    };
+
     return _Class;
 
   })(Backbone.View);

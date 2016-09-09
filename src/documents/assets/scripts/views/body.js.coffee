@@ -7,3 +7,10 @@ class views['body'] extends Backbone.View
 
   initialize: ->
     @setElement('body')
+
+  events:
+    click: 'closeAll'
+
+  closeAll: ->
+    views['analysis-title-button'].singleton().$el.removeClass('slds-is-open')
+    

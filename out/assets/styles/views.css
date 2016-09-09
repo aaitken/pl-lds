@@ -1,3 +1,7 @@
+[data-view="analysis-title-button"] {
+  margin-left: 0.75rem;
+}
+
 [data-view="expenses-table-head"] .slds-icon_container {
   position: absolute;
   margin: -0.05rem 0 0 0.65rem;

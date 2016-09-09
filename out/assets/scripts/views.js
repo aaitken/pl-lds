@@ -18,9 +18,18 @@
       return this.instance != null ? this.instance : this.instance = new this();
     };
 
-    _Class.prototype.tagName = 'button';
+    _Class.prototype.tagName = 'div';
 
-    _Class.prototype.className = 'slds-button slds-button--icon';
+    _Class.prototype.attributes = {
+      "class": 'slds-dropdown-trigger slds-dropdown-trigger--click',
+      'data-view': 'analysis-title-button'
+    };
+
+    _Class.prototype.events = {
+      click: function() {
+        return this.toggleMenu(event);
+      }
+    };
 
     _Class.prototype.initialize = function() {
       this.snippet = _.template(snippets['analysis-title-button']);
@@ -31,12 +40,18 @@
       return this.$el.html(this.snippet);
     };
 
+    _Class.prototype.toggleMenu = function(event) {
+      event.stopPropagation();
+      return this.$el.toggleClass('slds-is-open');
+    };
+
     return _Class;
 
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -58,7 +73,7 @@
 
     _Class.prototype.initialize = function() {
       this.setElement($('#analysis-title'));
-      this.button = new views['analysis-title-button']();
+      this.button = views['analysis-title-button'].singleton();
       return this.render();
     };
 
@@ -71,7 +86,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -93,12 +109,21 @@
       return this.setElement('body');
     };
 
+    _Class.prototype.events = {
+      click: 'closeAll'
+    };
+
+    _Class.prototype.closeAll = function() {
+      return views['analysis-title-button'].singleton().$el.removeClass('slds-is-open');
+    };
+
     return _Class;
 
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var content, snippets, templates, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -164,7 +189,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var content, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -213,7 +239,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var content, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -260,7 +287,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -299,7 +327,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -344,7 +373,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var snippets, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -468,7 +498,8 @@
   })(Backbone.View);
 
 }).call(this);
-;(function() {
+
+(function() {
   var templates, views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;

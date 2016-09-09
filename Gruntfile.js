@@ -10,9 +10,6 @@ module.exports = function(grunt) {
 
     //concatenate vendor scripts
     concat: {
-      options: {
-        separator: ';'
-      },
       dist: {
         files: [
           {src: [
