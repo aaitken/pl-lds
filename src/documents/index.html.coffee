@@ -20,8 +20,9 @@ div class:"plp-page-body", ->
     li ".slds-tabs--default__item.slds-text-title--caps", ->
       a ".slds-tabs--default__link", "Approval"
 
-  div class:"slds-m-bottom--large", ->
-    h1 class:"slds-text-heading--medium", "Analysis 1"
+  div id:"analysis-title", class:"slds-m-bottom--large", ->
+    h1 class:"slds-text-heading--medium", ->
+      span "Analysis 1"
     div class:"slds-button-group plp-right plp-analysis-level-buttons", role: "group", ->
       button ".slds-button.slds-button--neutral", "Refresh"
       button ".slds-button.slds-button--neutral", "Edit"

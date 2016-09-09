@@ -36,27 +36,27 @@ class views['info-icon'] extends Backbone.View
       nubbin[1] = 'right'
     if + $(window).height() + views['body'].singleton().$el.scrollTop() < + @offset.top + @tooltipView.$el.height() + 35
       nubbin[0] = 'bottom'
-    @nubbinDescription = "#{nubbin[0]}#{nubbin[1]}"
+    return "#{nubbin[0]}#{nubbin[1]}"
   
   position: ->
 
-    @getNubbinDescription()
     $elTooltip = @tooltipView.$el
     middleX = @offset.left-151
     leftX = @offset.left-280
     bottomY = +@offset.top+35
     topY = @offset.top-@tooltipView.$el.height()-15
+    nubbinDescription = @getNubbinDescription()
 
-    if @nubbinDescription is 'top'
+    if nubbinDescription is 'top'
       $elTooltip.css {left: "#{middleX}px", top: "#{bottomY}px"}
       $elTooltip.addClass('slds-nubbin--top')
-    if @nubbinDescription is 'topright'
+    if nubbinDescription is 'topright'
       $elTooltip.css {left: "#{leftX}px", top: "#{bottomY}px"}
       $elTooltip.addClass('slds-nubbin--top-right')
-    else if @nubbinDescription is 'bottom'
+    else if nubbinDescription is 'bottom'
       $elTooltip.css {left: "#{middleX}px", top: "#{topY}px"}
       $elTooltip.addClass('slds-nubbin--bottom')
-    else if @nubbinDescription is 'bottomright'
+    else if nubbinDescription is 'bottomright'
       $elTooltip.css {left: "#{leftX}px", top: "#{topY}px"}
       $elTooltip.addClass('slds-nubbin--bottom-right')
     style = $elTooltip.attr('style')

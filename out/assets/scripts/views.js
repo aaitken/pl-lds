@@ -1,4 +1,77 @@
 (function() {
+  var snippets, views,
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
+  views = PLP.namespace('views');
+
+  snippets = PLP.namespace('snippets');
+
+  views['analysis-title-button'] = (function(superClass) {
+    extend(_Class, superClass);
+
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
+    }
+
+    _Class.singleton = function() {
+      return this.instance != null ? this.instance : this.instance = new this();
+    };
+
+    _Class.prototype.tagName = 'button';
+
+    _Class.prototype.className = 'slds-button slds-button--icon';
+
+    _Class.prototype.initialize = function() {
+      this.snippet = _.template(snippets['analysis-title-button']);
+      return this.render();
+    };
+
+    _Class.prototype.render = function() {
+      return this.$el.html(this.snippet);
+    };
+
+    return _Class;
+
+  })(Backbone.View);
+
+}).call(this);
+;(function() {
+  var views,
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
+  views = PLP.namespace('views');
+
+  views = PLP.namespace('views');
+
+  views['analysis-title'] = (function(superClass) {
+    extend(_Class, superClass);
+
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
+    }
+
+    _Class.singleton = function() {
+      return this.instance != null ? this.instance : this.instance = new this();
+    };
+
+    _Class.prototype.initialize = function() {
+      this.setElement($('#analysis-title'));
+      this.button = new views['analysis-title-button']();
+      return this.render();
+    };
+
+    _Class.prototype.render = function() {
+      return this.$el.find('h1 span').after(this.button.el);
+    };
+
+    return _Class;
+
+  })(Backbone.View);
+
+}).call(this);
+;(function() {
   var views,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -337,37 +410,37 @@
       if (+$(window).height() + views['body'].singleton().$el.scrollTop() < +this.offset.top + this.tooltipView.$el.height() + 35) {
         nubbin[0] = 'bottom';
       }
-      return this.nubbinDescription = "" + nubbin[0] + nubbin[1];
+      return "" + nubbin[0] + nubbin[1];
     };
 
     _Class.prototype.position = function() {
-      var $elTooltip, bottomY, leftX, middleX, style, topY;
-      this.getNubbinDescription();
+      var $elTooltip, bottomY, leftX, middleX, nubbinDescription, style, topY;
       $elTooltip = this.tooltipView.$el;
       middleX = this.offset.left - 151;
       leftX = this.offset.left - 280;
       bottomY = +this.offset.top + 35;
       topY = this.offset.top - this.tooltipView.$el.height() - 15;
-      if (this.nubbinDescription === 'top') {
+      nubbinDescription = this.getNubbinDescription();
+      if (nubbinDescription === 'top') {
         $elTooltip.css({
           left: middleX + "px",
           top: bottomY + "px"
         });
         $elTooltip.addClass('slds-nubbin--top');
       }
-      if (this.nubbinDescription === 'topright') {
+      if (nubbinDescription === 'topright') {
         $elTooltip.css({
           left: leftX + "px",
           top: bottomY + "px"
         });
         $elTooltip.addClass('slds-nubbin--top-right');
-      } else if (this.nubbinDescription === 'bottom') {
+      } else if (nubbinDescription === 'bottom') {
         $elTooltip.css({
           left: middleX + "px",
           top: topY + "px"
         });
         $elTooltip.addClass('slds-nubbin--bottom');
-      } else if (this.nubbinDescription === 'bottomright') {
+      } else if (nubbinDescription === 'bottomright') {
         $elTooltip.css({
           left: leftX + "px",
           top: topY + "px"
