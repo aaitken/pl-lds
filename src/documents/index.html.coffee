@@ -12,7 +12,7 @@ div class:"plp-page-body", ->
 
   text @partial('chevron')
 
-  ul ".slds-m-bottom--x-large.slds-tabs--default__nav", role: "tablist", ->
+  ul id:"top-tabs", class:"slds-m-bottom--x-large slds-tabs--default__nav", role: "tablist", ->
     li ".slds-tabs--default__item.slds-text-title--caps", ->
       a ".slds-tabs--default__link", "Overview"
     li ".slds-tabs--default__item.slds-text-title--caps.slds-active", ->
@@ -20,20 +20,6 @@ div class:"plp-page-body", ->
     li ".slds-tabs--default__item.slds-text-title--caps", ->
       a ".slds-tabs--default__link", "Approval"
   
-  #text """
-      #<div class="slds-form-element">
-  #<label class="slds-checkbox--toggle slds-grid">
-    #<span class="slds-form-element__label slds-m-bottom--none">Toggle Label</span>
-    #<input name="checkbox" type="checkbox" aria-describedby="toggle-desc" />
-    #<span id="toggle-desc" class="slds-checkbox--faux_container" aria-live="assertive">
-      #<span class="slds-checkbox--faux"></span>
-      #<span class="slds-checkbox--on">Enabled</span>
-      #<span class="slds-checkbox--off">Disabled</span>
-    #</span>
-  #</label>
-#</div>"""
-
-
   div id:"analysis-title", class:"slds-m-bottom--large", ->
     h1 class:"slds-text-heading--medium", ->
       span "Analysis 1"

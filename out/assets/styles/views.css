@@ -22,3 +22,11 @@
   position: absolute;
   margin: -0.5rem 0 0 2.25rem;
 }
+
+[data-view="validation-switch"] {
+  margin-top: -65px;
+}
+[data-view="validation-switch"] .slds-form-element__label {
+  position: relative;
+  top: 3px;
+}
