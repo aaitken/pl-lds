@@ -19,3 +19,7 @@
 .slds-page-header__detail-block {
   max-width: 100%;
 }
+
+.slds-popover--tooltip {
+  opacity: 0.9;
+}

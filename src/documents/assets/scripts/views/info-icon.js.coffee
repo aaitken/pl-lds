@@ -39,32 +39,28 @@ class views['info-icon'] extends Backbone.View
     @nubbinDescription = "#{nubbin[0]}#{nubbin[1]}"
   
   position: ->
-    console.log @getNubbinDescription()
+
+    @getNubbinDescription()
     $elTooltip = @tooltipView.$el
+    middleX = @offset.left-151
+    leftX = @offset.left-280
+    bottomY = +@offset.top+35
+    topY = @offset.top-@tooltipView.$el.height()-15
+
     if @nubbinDescription is 'top'
-      $elTooltip.css {
-        position: 'absolute'
-        left: "#{@offset.left-151}px"
-        top: "#{+@offset.top+35}px"}
+      $elTooltip.css {left: "#{middleX}px", top: "#{bottomY}px"}
       $elTooltip.addClass('slds-nubbin--top')
     if @nubbinDescription is 'topright'
-      $elTooltip.css {
-        position: 'absolute'
-        left: "#{@offset.left-280}px"
-        top: "#{+@offset.top+35}px"}
+      $elTooltip.css {left: "#{leftX}px", top: "#{bottomY}px"}
       $elTooltip.addClass('slds-nubbin--top-right')
     else if @nubbinDescription is 'bottom'
-      $elTooltip.css {
-        position: 'absolute'
-        left: "#{@offset.left-151}px"
-        top: "#{@offset.top-@tooltipView.$el.height()-15}px"}
+      $elTooltip.css {left: "#{middleX}px", top: "#{topY}px"}
       $elTooltip.addClass('slds-nubbin--bottom')
     else if @nubbinDescription is 'bottomright'
-      $elTooltip.css {
-        position: 'absolute'
-        left: "#{@offset.left-280}px"
-        top: "#{@offset.top-@tooltipView.$el.height()-15}px"}
+      $elTooltip.css {left: "#{leftX}px", top: "#{topY}px"}
       $elTooltip.addClass('slds-nubbin--bottom-right')
+    style = $elTooltip.attr('style')
+    $elTooltip.attr('style', style += '; position: absolute')
 
   killTip: ->
     if @to

@@ -341,39 +341,41 @@
     };
 
     _Class.prototype.position = function() {
-      var $elTooltip;
-      console.log(this.getNubbinDescription());
+      var $elTooltip, bottomY, leftX, middleX, style, topY;
+      this.getNubbinDescription();
       $elTooltip = this.tooltipView.$el;
+      middleX = this.offset.left - 151;
+      leftX = this.offset.left - 280;
+      bottomY = +this.offset.top + 35;
+      topY = this.offset.top - this.tooltipView.$el.height() - 15;
       if (this.nubbinDescription === 'top') {
         $elTooltip.css({
-          position: 'absolute',
-          left: (this.offset.left - 151) + "px",
-          top: (+this.offset.top + 35) + "px"
+          left: middleX + "px",
+          top: bottomY + "px"
         });
         $elTooltip.addClass('slds-nubbin--top');
       }
       if (this.nubbinDescription === 'topright') {
         $elTooltip.css({
-          position: 'absolute',
-          left: (this.offset.left - 280) + "px",
-          top: (+this.offset.top + 35) + "px"
+          left: leftX + "px",
+          top: bottomY + "px"
         });
-        return $elTooltip.addClass('slds-nubbin--top-right');
+        $elTooltip.addClass('slds-nubbin--top-right');
       } else if (this.nubbinDescription === 'bottom') {
         $elTooltip.css({
-          position: 'absolute',
-          left: (this.offset.left - 151) + "px",
-          top: (this.offset.top - this.tooltipView.$el.height() - 15) + "px"
+          left: middleX + "px",
+          top: topY + "px"
         });
-        return $elTooltip.addClass('slds-nubbin--bottom');
+        $elTooltip.addClass('slds-nubbin--bottom');
       } else if (this.nubbinDescription === 'bottomright') {
         $elTooltip.css({
-          position: 'absolute',
-          left: (this.offset.left - 280) + "px",
-          top: (this.offset.top - this.tooltipView.$el.height() - 15) + "px"
+          left: leftX + "px",
+          top: topY + "px"
         });
-        return $elTooltip.addClass('slds-nubbin--bottom-right');
+        $elTooltip.addClass('slds-nubbin--bottom-right');
       }
+      style = $elTooltip.attr('style');
+      return $elTooltip.attr('style', style += '; position: absolute');
     };
 
     _Class.prototype.killTip = function() {
