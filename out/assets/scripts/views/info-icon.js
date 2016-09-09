@@ -24,7 +24,7 @@
           return function() {
             return _this.showTip();
           };
-        })(this)), 300);
+        })(this)), 250);
       },
       mouseleave: 'killTip'
     };
@@ -34,6 +34,7 @@
         options = {};
       }
       this.tip = options.tip;
+      this.bodyView = views['body'].singleton();
       this.snippet = _.template(snippets['info-icon']);
       this.TooltipView = views['tooltip'];
       return this.render();
@@ -43,28 +44,62 @@
       return this.$el.html(this.snippet());
     };
 
-    _Class.prototype.getOffset = function() {
-      return this.$el.offset();
-    };
-
     _Class.prototype.showTip = function() {
       this.to = null;
-      this.offset = this.getOffset();
+      this.offset = this.$el.offset();
       this.tooltipView = new this.TooltipView({
         tip: this.tip
       });
-      views['body'].singleton().$el.append(this.tooltipView.el);
+      this.bodyView.$el.append(this.tooltipView.el);
       this.position();
-      return this.tooltipView.$el.fadeIn(100);
+      return this.tooltipView.$el.fadeIn(150);
+    };
+
+    _Class.prototype.getNubbinDescription = function() {
+      var nubbin;
+      nubbin = ['top', ''];
+      if (+this.offset.left - 151 + this.tooltipView.$el.width() > views['body'].singleton().$el.width() - 30) {
+        nubbin[1] = 'right';
+      }
+      if (+$(window).height() + views['body'].singleton().$el.scrollTop() < +this.offset.top + this.tooltipView.$el.height() + 35) {
+        nubbin[0] = 'bottom';
+      }
+      return this.nubbinDescription = "" + nubbin[0] + nubbin[1];
     };
 
     _Class.prototype.position = function() {
-      if (parseInt(this.offset.left - 151 + this.tooltipView.$el.width()) > views['body'].singleton().$el.width() - 30) {
-        this.tooltipView.$el.attr('style', "position:absolute; left:" + (this.offset.left - 280) + "px; top:" + (parseInt(this.offset.top + 35)) + "px;");
-        return this.tooltipView.$el.addClass('slds-nubbin--top-right');
-      } else {
-        this.tooltipView.$el.attr('style', "position:absolute; left:" + (this.offset.left - 151) + "px; top:" + (parseInt(this.offset.top + 35)) + "px;");
-        return this.tooltipView.$el.addClass('slds-nubbin--top');
+      var $elTooltip;
+      console.log(this.getNubbinDescription());
+      $elTooltip = this.tooltipView.$el;
+      if (this.nubbinDescription === 'top') {
+        $elTooltip.css({
+          position: 'absolute',
+          left: (this.offset.left - 151) + "px",
+          top: (+this.offset.top + 35) + "px"
+        });
+        $elTooltip.addClass('slds-nubbin--top');
+      }
+      if (this.nubbinDescription === 'topright') {
+        $elTooltip.css({
+          position: 'absolute',
+          left: (this.offset.left - 280) + "px",
+          top: (+this.offset.top + 35) + "px"
+        });
+        return $elTooltip.addClass('slds-nubbin--top-right');
+      } else if (this.nubbinDescription === 'bottom') {
+        $elTooltip.css({
+          position: 'absolute',
+          left: (this.offset.left - 151) + "px",
+          top: (this.offset.top - this.tooltipView.$el.height() - 15) + "px"
+        });
+        return $elTooltip.addClass('slds-nubbin--bottom');
+      } else if (this.nubbinDescription === 'bottomright') {
+        $elTooltip.css({
+          position: 'absolute',
+          left: (this.offset.left - 280) + "px",
+          top: (this.offset.top - this.tooltipView.$el.height() - 15) + "px"
+        });
+        return $elTooltip.addClass('slds-nubbin--bottom-right');
       }
     };
 

@@ -9,37 +9,62 @@ class views['info-icon'] extends Backbone.View
   events:
     mouseenter: ->
       @to = setTimeout (=>
-        @showTip()), 300
+        @showTip()), 250
     mouseleave: 'killTip'
 
   initialize: (options = {})->
     @tip = options.tip
+    @bodyView = views['body'].singleton()
     @snippet = _.template(snippets['info-icon'])
-    @TooltipView = views['tooltip']  
+    @TooltipView = views['tooltip']
     @render()
 
   render: ->
     @$el.html @snippet()
-
-  getOffset: ->
-    @$el.offset()
   
   showTip: ->
     @to = null
-    @offset = @getOffset()
+    @offset = @$el.offset()
     @tooltipView = new @TooltipView {tip: @tip}
-    views['body'].singleton().$el.append @tooltipView.el
+    @bodyView.$el.append @tooltipView.el
     @position()
-    @tooltipView.$el.fadeIn(100)
+    @tooltipView.$el.fadeIn(150)
 
+  getNubbinDescription: ->
+    nubbin = ['top', '']
+    if + @offset.left-151 + @tooltipView.$el.width() > views['body'].singleton().$el.width() - 30
+      nubbin[1] = 'right'
+    if + $(window).height() + views['body'].singleton().$el.scrollTop() < + @offset.top + @tooltipView.$el.height() + 35
+      nubbin[0] = 'bottom'
+    @nubbinDescription = "#{nubbin[0]}#{nubbin[1]}"
+  
   position: ->
-    if parseInt(@offset.left-151 + @tooltipView.$el.width()) > views['body'].singleton().$el.width() - 30
-      @tooltipView.$el.attr('style', "position:absolute; left:#{@offset.left-280}px; top:#{parseInt(@offset.top+35)}px;")
-      @tooltipView.$el.addClass('slds-nubbin--top-right') 
-    else
-      @tooltipView.$el.attr('style', "position:absolute; left:#{@offset.left-151}px; top:#{parseInt(@offset.top+35)}px;")
-      @tooltipView.$el.addClass('slds-nubbin--top')
-    
+    console.log @getNubbinDescription()
+    $elTooltip = @tooltipView.$el
+    if @nubbinDescription is 'top'
+      $elTooltip.css {
+        position: 'absolute'
+        left: "#{@offset.left-151}px"
+        top: "#{+@offset.top+35}px"}
+      $elTooltip.addClass('slds-nubbin--top')
+    if @nubbinDescription is 'topright'
+      $elTooltip.css {
+        position: 'absolute'
+        left: "#{@offset.left-280}px"
+        top: "#{+@offset.top+35}px"}
+      $elTooltip.addClass('slds-nubbin--top-right')
+    else if @nubbinDescription is 'bottom'
+      $elTooltip.css {
+        position: 'absolute'
+        left: "#{@offset.left-151}px"
+        top: "#{@offset.top-@tooltipView.$el.height()-15}px"}
+      $elTooltip.addClass('slds-nubbin--bottom')
+    else if @nubbinDescription is 'bottomright'
+      $elTooltip.css {
+        position: 'absolute'
+        left: "#{@offset.left-280}px"
+        top: "#{@offset.top-@tooltipView.$el.height()-15}px"}
+      $elTooltip.addClass('slds-nubbin--bottom-right')
 
   killTip: ->
     if @to

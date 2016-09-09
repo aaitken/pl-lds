@@ -15,5 +15,3 @@ class views['tooltip'] extends Backbone.View
 
   render: ->
     @$el.html @template({content: @content})
-
-

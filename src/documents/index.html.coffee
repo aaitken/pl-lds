@@ -25,10 +25,10 @@ div class:"plp-page-body", ->
     div class:"slds-button-group plp-right plp-analysis-level-buttons", role: "group", ->
       button ".slds-button.slds-button--neutral", "Refresh"
       button ".slds-button.slds-button--neutral", "Edit"
-      button ".slds-button.slds-button--neutral", "Save" 
+      button ".slds-button.slds-button--neutral", "Save"
 
   div class:"slds-m-bottom--x-large plp-kpi-container", ->
-    img src:"/assets/images/KPIs.png" 
+    img src:"/assets/images/KPIs.png"
     
 
   div class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
@@ -85,21 +85,14 @@ div class:"plp-page-body", ->
             div class:"slds-truncate", heading[1]
     tbody id:"expenses-table-body", ->
       tr style:"height: 49px", ->
-        td class:"slds-text-heading--label", "OpEx and Stop Totals"      
-        td "100"      
-        td ""      
-        td ""      
-        td "100000"      
-        td ""      
+        td class:"slds-text-heading--label", "OpEx and Stop Totals"
+        td "100"
+        td ""
+        td ""
+        td "100000"
+        td ""
 
   h1 class:"slds-text-heading--small slds-m-bottom--medium", style:"font-weight:regular" , "Comments"
   div class:"slds-form-element", ->
     div class:"slds-form-element__control", ->
       textarea class:"slds-textarea", placeholder:"Add expense comments here."
-         
-
-        
-
-      
-
-
