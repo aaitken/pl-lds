@@ -34,7 +34,7 @@ div class:"plp-page-body", ->
     img src:"/assets/images/KPIs.png"
     
 
-  div class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
+  div id:"submenu", class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
     a "Units"
     span "|"
     a "Rents & Incentives"
@@ -51,10 +51,6 @@ div class:"plp-page-body", ->
     span "|"
     a "Options"
 
-    button class:"plp-deal-reports-button plp-right slds-button slds-button--neutral", ->
-      text "Deal Reports"
-      svg "aria-hidden":"true", class:"slds-button__icon slds-button__icon--right", ->
-        use "xlink:href":"/assets/icons/utility-sprite/svg/symbols.svg#down"
 
   h1 class:"slds-text-heading--small slds-m-bottom--medium", style:"font-weight:regular" , "Settings and Selections"
 
