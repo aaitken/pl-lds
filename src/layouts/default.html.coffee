@@ -13,6 +13,7 @@ scripts: [
   '/assets/scripts/content.js'
   '/assets/scripts/templates.js'
   '/assets/scripts/snippets.js'
+  '/assets/scripts/router.js'
   '/assets/scripts/app.js']
 
 ---
