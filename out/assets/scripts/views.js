@@ -173,8 +173,7 @@
     };
 
     _Class.prototype.closeAll = function() {
-      views['analysis-title-menu'].singleton().$el.removeClass('slds-is-open');
-      return views['analysis-title-settings'].singleton().$el.removeClass('slds-is-open');
+      return $('*').removeClass('slds-is-open');
     };
 
     return _Class;
@@ -208,10 +207,21 @@
 
     _Class.prototype.tagName = 'div';
 
-    _Class.prototype.className = 'plp-deal-reports-button plp-right slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open';
+    _Class.prototype.attributes = {
+      "class": 'plp-deal-reports-button plp-right slds-dropdown-trigger slds-dropdown-trigger--click',
+      'data-view': 'expenses-deal-reports-btn'
+    };
+
+    _Class.prototype.events = {
+      click: function() {
+        this.bodyView.closeAll();
+        return this.toggleMenu(event);
+      }
+    };
 
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
+      this.bodyView = views['body'].singleton();
       this.snippet = _.template(snippets['expenses-deal-reports-btn']);
       return this.render();
     };
@@ -219,6 +229,11 @@
     _Class.prototype.render = function() {
       this.$el.html(this.snippet);
       return this.$hook.append(this.el);
+    };
+
+    _Class.prototype.toggleMenu = function(event) {
+      event.stopPropagation();
+      return this.$el.toggleClass('slds-is-open');
     };
 
     return _Class;

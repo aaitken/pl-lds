@@ -12,6 +12,4 @@ class views['body'] extends Backbone.View
     click: 'closeAll'
 
   closeAll: ->
-    views['analysis-title-menu'].singleton().$el.removeClass('slds-is-open')
-    views['analysis-title-settings'].singleton().$el.removeClass('slds-is-open')
-    
+    $('*').removeClass('slds-is-open')
