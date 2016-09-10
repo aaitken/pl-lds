@@ -19,6 +19,9 @@
       PLP.views['validation-switch'].singleton({
         $hook: $('#top-tabs')
       });
+      PLP.views['submenu'].singleton({
+        $hook: $('#kpi-container')
+      });
       PLP.views['expenses-deal-reports-btn'].singleton({
         $hook: $('#submenu')
       });

@@ -39,6 +39,15 @@
 
   snippets = PLP.namespace('snippets');
 
+  snippets['submenu'] = "<a>Units</a>\n<span>|</span>\n<a>Rents &amp; Incentives</a>\n<span>|</span>\n<a>Tenant Improvements</a>\n<span>|</span>\n<a>Commissions</a>\n<span>|</span>\n<a class=\"plp-is-active\">Expenses</a>\n<span>|</span>\n<a>Rent Indexation</a>\n<span>|</span>\n<a>Guarantees</a>\n<span>|</span>\n<a>Options</a>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
   snippets['validation-switch'] = "<label class=\"slds-checkbox--toggle slds-grid\">\n  <span class=\"slds-form-element__label slds-m-bottom--none\">Approval Submission Validation</span>\n  <input name=\"checkbox\" type=\"checkbox\" aria-describedby=\"toggle-desc\">\n  <span id=\"toggle-desc\" class=\"slds-checkbox--faux_container\" aria-live=\"assertive\">\n    <span class=\"slds-checkbox--faux\"></span>\n  </span>\n</label>";
 
 }).call(this);

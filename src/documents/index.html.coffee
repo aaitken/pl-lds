@@ -30,26 +30,26 @@ div class:"plp-page-body", ->
           use "xmlns:xlink":"http://www.w3.org/1999/xlink", "xlink:href":"/assets/icons/utility-sprite/svg/symbols.svg#email"
       button class:"slds-button slds-button--brand", "Save Analysis"
 
-  div class:"slds-m-bottom--x-large plp-kpi-container", ->
+  div id:"kpi-container", class:"slds-m-bottom--x-large plp-kpi-container", ->
     img src:"/assets/images/KPIs.png"
     
 
-  div id:"submenu", class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
-    a "Units"
-    span "|"
-    a "Rents & Incentives"
-    span "|"
-    a "Tenant Improvements"
-    span "|"
-    a "Commissions"
-    span "|"
-    a class:"plp-is-active", "Expenses"
-    span "|"
-    a "Rent Indexation"
-    span "|"
-    a "Guarantees"
-    span "|"
-    a "Options"
+  #div id:"submenu", class:"plp-submenu slds-m-bottom--x-large slds-text-title", ->
+    #a "Units"
+    #span "|"
+    #a "Rents & Incentives"
+    #span "|"
+    #a "Tenant Improvements"
+    #span "|"
+    #a "Commissions"
+    #span "|"
+    #a class:"plp-is-active", "Expenses"
+    #span "|"
+    #a "Rent Indexation"
+    #span "|"
+    #a "Guarantees"
+    #span "|"
+    #a "Options"
 
 
   h1 class:"slds-text-heading--small slds-m-bottom--medium", style:"font-weight:regular" , "Settings and Selections"
