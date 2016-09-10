@@ -71,7 +71,7 @@
       var $elTooltip, bottomY, leftX, middleX, nubbinDescription, style, topY;
       $elTooltip = this.tooltipView.$el;
       middleX = this.offset.left - 151;
-      leftX = this.offset.left - 280;
+      leftX = this.offset.left - 287;
       bottomY = +this.offset.top + 35;
       topY = this.offset.top - this.tooltipView.$el.height() - 15;
       nubbinDescription = this.getNubbinDescription();

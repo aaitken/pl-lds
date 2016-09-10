@@ -42,7 +42,7 @@ class views['info-icon'] extends Backbone.View
 
     $elTooltip = @tooltipView.$el
     middleX = @offset.left-151
-    leftX = @offset.left-280
+    leftX = @offset.left-287
     bottomY = +@offset.top+35
     topY = @offset.top-@tooltipView.$el.height()-15
     nubbinDescription = @getNubbinDescription()

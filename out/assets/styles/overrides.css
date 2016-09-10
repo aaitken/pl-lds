@@ -33,3 +33,24 @@
 .slds-button.slds-button--brand.slds-path__mark-complete.slds-no-flex.slds-m-horizontal--small:hover {
   background-color: #d8dde6;
 }
+
+.slds-text-heading--label {
+  letter-spacing: 0;
+}
+
+.slds-checkbox--toggle [type="checkbox"] + .slds-checkbox--faux:before, .slds-checkbox--toggle [type="checkbox"] ~ .slds-checkbox--faux:before, .slds-checkbox--toggle [type="checkbox"] + .slds-checkbox--faux_container .slds-checkbox--faux:before {
+  content: "off";
+  color: #16325c;
+  position: absolute;
+  top: 4px;
+  margin-left: 22px;
+  font-size: 0.65rem;
+}
+
+.slds-checkbox--toggle [type="checkbox"]:checked + .slds-checkbox--faux:after, .slds-checkbox--toggle [type="checkbox"]:checked ~ .slds-checkbox--faux:after, .slds-checkbox--toggle [type="checkbox"]:checked + .slds-checkbox--faux_container .slds-checkbox--faux:after {
+  content: "on";
+  color: white;
+  border-width: 0;
+  transform: none;
+  font-size: 0.65rem;
+}
