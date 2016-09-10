@@ -74,7 +74,7 @@ div class:"plp-page-body", ->
             option "nnn"
             option "nnnpm"
 
-  table id:"expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-table--cell-buffer slds-no-row-hover", ->
+  table id:"expenses-table", class:"slds-m-bottom--x-large slds-table slds-table--bordered slds-no-row-hover", ->
     thead "data-view":"expenses-table-head", id:"expenses-table-head", ->
       tr class:"slds-text-heading--label", ->
         for heading in [
