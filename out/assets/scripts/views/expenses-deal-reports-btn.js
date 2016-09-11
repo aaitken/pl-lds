@@ -24,7 +24,7 @@
     _Class.prototype.tagName = 'div';
 
     _Class.prototype.attributes = {
-      "class": 'plp-deal-reports-button plp-right slds-dropdown-trigger slds-dropdown-trigger--click',
+      "class": 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click',
       'data-view': 'expenses-deal-reports-btn'
     };
 
@@ -44,7 +44,7 @@
 
     _Class.prototype.render = function() {
       this.$el.html(this.snippet);
-      return this.$hook.append(this.el);
+      return this.$hook.after(this.el);
     };
 
     _Class.prototype.toggleMenu = function(event) {

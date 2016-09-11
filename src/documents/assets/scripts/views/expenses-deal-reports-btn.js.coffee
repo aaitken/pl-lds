@@ -8,7 +8,7 @@ class views['expenses-deal-reports-btn'] extends Backbone.View
 
   tagName: 'div'
   attributes:
-    class: 'plp-deal-reports-button plp-right slds-dropdown-trigger slds-dropdown-trigger--click'
+    class: 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click'
     'data-view': 'expenses-deal-reports-btn'
 
   events:
@@ -24,7 +24,7 @@ class views['expenses-deal-reports-btn'] extends Backbone.View
 
   render: ->
     @$el.html(@snippet)
-    @$hook.append @el
+    @$hook.after @el
 
   toggleMenu: (event)->
     event.stopPropagation()
