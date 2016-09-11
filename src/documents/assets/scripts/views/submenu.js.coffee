@@ -15,6 +15,7 @@ class views['submenu'] extends Backbone.View
   attributes:
     id: 'submenu'
     class: 'plp-submenu slds-m-bottom--x-large slds-text-title'
+    'data-view': 'submenu'
 
   handleSelection: (target)->
     @$el.find('a').removeClass('plp-is-active')
@@ -28,3 +29,8 @@ class views['submenu'] extends Backbone.View
   render: ->
     @$el.html @snippet()
     @$hook.after @el
+
+  size: ->
+    _.each @$el.find('a'), (item)=>
+      $(item).css(width: "#{$(item).width()}px")
+      $(item).removeClass('plp-bold-for-sizing')

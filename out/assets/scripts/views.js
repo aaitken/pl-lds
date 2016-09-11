@@ -659,7 +659,8 @@
 
     _Class.prototype.attributes = {
       id: 'submenu',
-      "class": 'plp-submenu slds-m-bottom--x-large slds-text-title'
+      "class": 'plp-submenu slds-m-bottom--x-large slds-text-title',
+      'data-view': 'submenu'
     };
 
     _Class.prototype.handleSelection = function(target) {
@@ -676,6 +677,17 @@
     _Class.prototype.render = function() {
       this.$el.html(this.snippet());
       return this.$hook.after(this.el);
+    };
+
+    _Class.prototype.size = function() {
+      return _.each(this.$el.find('a'), (function(_this) {
+        return function(item) {
+          $(item).css({
+            width: ($(item).width()) + "px"
+          });
+          return $(item).removeClass('plp-bold-for-sizing');
+        };
+      })(this));
     };
 
     return _Class;

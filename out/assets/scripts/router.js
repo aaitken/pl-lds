@@ -25,7 +25,8 @@
       PLP.views['expenses-deal-reports-btn'].singleton({
         $hook: $('#submenu')
       });
-      return PLP.views['body'].singleton();
+      PLP.views['body'].singleton();
+      return PLP.views['submenu'].singleton().size();
     };
 
     return Router;

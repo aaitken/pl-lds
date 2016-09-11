@@ -10,4 +10,5 @@ class PLP.Router extends Backbone.Router
     PLP.views['submenu'].singleton({$hook: $('#kpi-container')})
     PLP.views['expenses-deal-reports-btn'].singleton({$hook: $('#submenu')})
     PLP.views['body'].singleton()
+    PLP.views['submenu'].singleton().size()
     

@@ -1,0 +1,18 @@
+[data-view="submenu"] a {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+}
+[data-view="submenu"] a.plp-is-active:hover {
+  text-decoration: none;
+  cursor: default;
+  color: #16325c;
+}
+[data-view="submenu"] a.plp-bold-for-sizing {
+  font-weight: bold;
+  color: white;
+}
+[data-view="submenu"] span {
+  display: inline-block;
+  margin: 0 4px;
+}

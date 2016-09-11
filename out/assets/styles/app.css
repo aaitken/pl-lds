@@ -60,14 +60,6 @@ button.slds-button:focus {
   margin-top: -34px;
 }
 
-.plp-submenu {
-  font-size: 0.875rem;
-}
-.plp-submenu span {
-  display: inline-block;
-  margin: 0 3px;
-}
-
 .plp-highlight {
   color: #b20000;
 }
