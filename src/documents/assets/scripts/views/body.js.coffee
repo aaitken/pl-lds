@@ -10,6 +10,7 @@ class views['body'] extends Backbone.View
 
   events:
     click: 'closeAll'
+    touch: 'closeAll'
 
   closeAll: ->
     $('*').removeClass('slds-is-open')

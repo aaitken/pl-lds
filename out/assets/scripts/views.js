@@ -169,7 +169,8 @@
     };
 
     _Class.prototype.events = {
-      click: 'closeAll'
+      click: 'closeAll',
+      touch: 'closeAll'
     };
 
     _Class.prototype.closeAll = function() {
