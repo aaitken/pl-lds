@@ -38,14 +38,14 @@
     };
 
     _Class.prototype.handleSelection = function(target) {
-      return PLP.router.navigate(target.id, {
+      return PLP.router.navigate($(target).attr('data-id'), {
         trigger: true
       });
     };
 
     _Class.prototype.highlight = function() {
       this.$el.find('a').removeClass('plp-is-active');
-      return this.$el.find("#" + (document.location.hash.substr(1))).addClass('plp-is-active');
+      return this.$el.find("[data-id=" + (document.location.hash.substr(1)) + "]").addClass('plp-is-active');
     };
 
     _Class.prototype.initialize = function(options) {

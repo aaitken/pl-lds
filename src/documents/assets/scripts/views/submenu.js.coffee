@@ -18,11 +18,11 @@ class views['submenu'] extends Backbone.View
     'data-view': 'submenu'
 
   handleSelection: (target)->
-    PLP.router.navigate(target.id, {trigger: true})
+    PLP.router.navigate($(target).attr('data-id'), {trigger: true})
   
   highlight: ->
     @$el.find('a').removeClass('plp-is-active')
-    @$el.find("##{document.location.hash.substr(1)}").addClass('plp-is-active')
+    @$el.find("[data-id=#{document.location.hash.substr(1)}]").addClass('plp-is-active')
     
   
   initialize: (options)->

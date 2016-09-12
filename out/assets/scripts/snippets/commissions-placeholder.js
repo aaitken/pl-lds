@@ -3,6 +3,6 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['options-placeholder'] = "[Options]";
+  snippets['commissions-placeholder'] = "[Commissions]";
 
 }).call(this);

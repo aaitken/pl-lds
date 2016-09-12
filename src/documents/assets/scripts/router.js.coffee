@@ -4,7 +4,14 @@ class PLP.Router extends Backbone.Router
 
   routes: {
     expenses: 'expenses'
-    units: 'units'}
+    units: 'units'
+    'rents-and-incentives': 'rentsAndIncentives'
+    'tenant-improvements': 'tenantImprovements'
+    commissions: 'commissions'
+    'rent-indexation': 'rentIndexation'
+    guarantees: 'guarantees'
+    options: 'options'
+  }
 
   initialize: ->
     @on 'route', ->
@@ -16,4 +23,22 @@ class PLP.Router extends Backbone.Router
 
   units: ->
     views['units-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  rentsAndIncentives: ->
+    views['rents-and-incentives-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  tenantImprovements: ->
+    views['tenant-improvements-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  commissions: ->
+    views['commissions-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  rentIndexation: ->
+    views['rent-indexation-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  guarantees: ->
+    views['guarantees-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+
+  options: ->
+    views['options-placeholder'].singleton({$hook: $('#deal-reports')}).show()
     

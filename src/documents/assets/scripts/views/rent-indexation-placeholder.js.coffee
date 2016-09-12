@@ -1,7 +1,7 @@
 views = PLP.namespace('views')
 snippets = PLP.namespace('snippets')
 
-class views['units-placeholder'] extends Backbone.View
+class views['rent-indexation-placeholder'] extends Backbone.View
 
   @singleton = (options = {})->
     @instance ?= new this(options)
@@ -13,7 +13,7 @@ class views['units-placeholder'] extends Backbone.View
 
   initialize: (options)->
     @$hook = options.$hook
-    @snippet = _.template(snippets['units-placeholder'])
+    @snippet = _.template(snippets['rent-indexation-placeholder'])
     @render()
 
   render: ->

@@ -14,7 +14,13 @@
 
     Router.prototype.routes = {
       expenses: 'expenses',
-      units: 'units'
+      units: 'units',
+      'rents-and-incentives': 'rentsAndIncentives',
+      'tenant-improvements': 'tenantImprovements',
+      commissions: 'commissions',
+      'rent-indexation': 'rentIndexation',
+      guarantees: 'guarantees',
+      options: 'options'
     };
 
     Router.prototype.initialize = function() {
@@ -32,6 +38,42 @@
 
     Router.prototype.units = function() {
       return views['units-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.rentsAndIncentives = function() {
+      return views['rents-and-incentives-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.tenantImprovements = function() {
+      return views['tenant-improvements-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.commissions = function() {
+      return views['commissions-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.rentIndexation = function() {
+      return views['rent-indexation-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.guarantees = function() {
+      return views['guarantees-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
+    };
+
+    Router.prototype.options = function() {
+      return views['options-placeholder'].singleton({
         $hook: $('#deal-reports')
       }).show();
     };

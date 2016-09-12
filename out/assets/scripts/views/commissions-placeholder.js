@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['units-placeholder'] = (function(superClass) {
+  views['commissions-placeholder'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -30,7 +30,7 @@
 
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['units-placeholder']);
+      this.snippet = _.template(snippets['commissions-placeholder']);
       return this.render();
     };
 

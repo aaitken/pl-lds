@@ -3,6 +3,6 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Rents & Incentives]</h1>";
+  snippets['tenant-improvements-placeholder'] = "[Tenant Improvements]";
 
 }).call(this);

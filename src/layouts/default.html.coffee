@@ -30,4 +30,4 @@ html ->
     #insert script using frontend plugin
     #this picks up incrementally-named document scripts as well
     for url in @assets('scripts')
-      script src:url, defer:"defer"
+      script src:url
