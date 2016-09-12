@@ -8,6 +8,7 @@ class views['expenses-deal-reports-btn'] extends Backbone.View
 
   tagName: 'div'
   attributes:
+    id: 'deal-reports'
     class: 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click'
     'data-view': 'expenses-deal-reports-btn'
 

@@ -24,6 +24,7 @@
     _Class.prototype.tagName = 'div';
 
     _Class.prototype.attributes = {
+      id: 'deal-reports',
       "class": 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click',
       'data-view': 'expenses-deal-reports-btn'
     };

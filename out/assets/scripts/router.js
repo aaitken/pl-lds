@@ -17,22 +17,10 @@
     };
 
     Router.prototype.expenses = function() {
-      views['submenu'].singleton({
-        $hook: $('#kpi-container')
-      });
       views['expenses-hanging-rack'].singleton({
-        $hook: $('#submenu')
+        $hook: $('#deal-reports')
       });
-      views['expenses-table'].singleton();
-      views['analysis-title'].singleton();
-      views['validation-switch'].singleton({
-        $hook: $('#top-tabs')
-      });
-      views['expenses-deal-reports-btn'].singleton({
-        $hook: $('#submenu')
-      });
-      views['body'].singleton();
-      return views['submenu'].singleton().size();
+      return views['expenses-table'].singleton();
     };
 
     return Router;
