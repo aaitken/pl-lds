@@ -1,15 +1,19 @@
 views = PLP.namespace('views')
 snippets = PLP.namespace('snippets')
 
-
-class views['expenses-hanging-rack'] extends Backbone.View
+class views['units-placeholder'] extends Backbone.View
 
   @singleton = (options = {})->
     @instance ?= new this(options)
 
+  tagName: 'h1'
+  attributes:
+    class: 'slds-text-heading--small slds-m-bottom--medium'
+    style: 'font-weight: regular'
+
   initialize: (options)->
     @$hook = options.$hook
-    @snippet = _.template(snippets['expenses-hanging-rack'])
+    @snippet = _.template(snippets['units-placeholder'])
     @render()
 
   render: ->
@@ -19,4 +23,3 @@ class views['expenses-hanging-rack'] extends Backbone.View
   show: ->
     @$hook.nextAll().hide()
     @$el.show()
-    

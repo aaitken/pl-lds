@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['expenses-hanging-rack'] = (function(superClass) {
+  views['units-placeholder'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -21,9 +21,16 @@
       return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
+    _Class.prototype.tagName = 'h1';
+
+    _Class.prototype.attributes = {
+      "class": 'slds-text-heading--small slds-m-bottom--medium',
+      style: 'font-weight: regular'
+    };
+
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['expenses-hanging-rack']);
+      this.snippet = _.template(snippets['units-placeholder']);
       return this.render();
     };
 

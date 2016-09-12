@@ -1,5 +1,5 @@
 (function() {
-  var views;
+  var router, views;
 
   views = PLP.namespace('views');
 
@@ -21,7 +21,7 @@
 
   views['body'].singleton();
 
-  PLP.router = new PLP.Router();
+  router = PLP.router = new PLP.Router();
 
   Backbone.history.start();
 

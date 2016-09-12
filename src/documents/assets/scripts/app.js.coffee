@@ -8,5 +8,5 @@ views['validation-switch'].singleton({$hook: $('#top-tabs')})
 views['expenses-deal-reports-btn'].singleton({$hook: $('#submenu')})
 views['body'].singleton()
 
-PLP.router = new PLP.Router()
+router = PLP.router = new PLP.Router()
 Backbone.history.start()

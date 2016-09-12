@@ -21,6 +21,15 @@
 
   snippets = PLP.namespace('snippets');
 
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Commissions]</h1>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
   snippets['expenses-deal-reports-btn'] = "<button class=\"plp-deal-reports-button slds-button slds-button--neutral\">\n  Deal Reports\n  <svg aria-hidden=\"true\" class=\"slds-button__icon slds-button__icon--right\">\n    <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#down\"></use>\n  </svg>\n</button>\n<div class=\"slds-dropdown slds-dropdown--right\">\n<ul class=\"dropdown__list\" role=\"menu\">\n  <li class=\"slds-dropdown__item slds-is-selected\" role=\"presentation\">\n    <a href=\"javascript:void(0);\" role=\"menuitemcheckbox\" aria-checked=\"true\" tabindex=\"0\">Deal Summary</a>\n  </li>\n  <li class=\"slds-dropdown__item slds-is-selected\" role=\"presentation\">\n    <a href=\"javascript:void(0);\" role=\"menuitemcheckbox\" aria-checked=\"true\" tabindex=\"0\">Lease Abstract</a>\n  </li>\n  <li class=\"slds-dropdown__item slds-is-selected\" role=\"presentation\">\n    <a href=\"javascript:void(0);\" role=\"menuitemcheckbox\" aria-checked=\"true\" tabindex=\"0\">OA Deal Summary</a>\n  </li>\n  <li class=\"slds-dropdown__item slds-is-selected\" role=\"presentation\">\n    <a href=\"javascript:void(0);\" role=\"menuitemcheckbox\" aria-checked=\"true\" tabindex=\"0\">Cash Flow</a>\n  </li>\n</ul>\n</div>";
 
 }).call(this);
@@ -39,6 +48,15 @@
 
   snippets = PLP.namespace('snippets');
 
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Guarantees]</h1>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
   snippets['info-icon'] = "<svg aria-hidden=\"true\" class=\"slds-icon slds-icon--x-small slds-icon-text-default\">\n  <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"/assets/icons/utility-sprite/svg/symbols.svg#info\"></use>\n</svg>";
 
 }).call(this);
@@ -48,7 +66,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">Placeholder</h1>";
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Options]</h1>";
 
 }).call(this);
 
@@ -57,7 +75,43 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['submenu'] = "<a id=\"submenu-1\" class=\"plp-bold-for-sizing\">Units</a>\n<span>|</span>\n<a id=\"submenu-2\" class=\"plp-bold-for-sizing\">Rents &amp; Incentives</a>\n<span>|</span>\n<a id=\"submenu-3\" class=\"plp-bold-for-sizing\">Tenant Improvements</a>\n<span>|</span>\n<a id=\"submenu-4\" class=\"plp-bold-for-sizing\">Commissions</a>\n<span>|</span>\n<a id=\"submenu-5\" class=\"plp-bold-for-sizing plp-is-active\">Expenses</a>\n<span>|</span>\n<a id=\"submenu-6\" class=\"plp-bold-for-sizing\">Rent Indexation</a>\n<span>|</span>\n<a id=\"submenu-7\" class=\"plp-bold-for-sizing\">Guarantees</a>\n<span>|</span>\n<a id=\"submenu-8\" class=\"plp-bold-for-sizing\">Options</a>";
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Rents Indexation]</h1>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Tenant Improvements]</h1>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
+  snippets['submenu'] = "<a id=\"units\" class=\"plp-bold-for-sizing\">Units</a>\n<span>|</span>\n<a id=\"rents-and-incentives\" class=\"plp-bold-for-sizing\">Rents &amp; Incentives</a>\n<span>|</span>\n<a id=\"tenant-improvements\" class=\"plp-bold-for-sizing\">Tenant Improvements</a>\n<span>|</span>\n<a id=\"commissions\" class=\"plp-bold-for-sizing\">Commissions</a>\n<span>|</span>\n<a id=\"expenses\" class=\"plp-bold-for-sizing\">Expenses</a>\n<span>|</span>\n<a id=\"rent-indexation\" class=\"plp-bold-for-sizing\">Rent Indexation</a>\n<span>|</span>\n<a id=\"guarantees\" class=\"plp-bold-for-sizing\">Guarantees</a>\n<span>|</span>\n<a id=\"options\" class=\"plp-bold-for-sizing\">Options</a>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
+  snippets['placeholder'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">[Rents & Incentives]</h1>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
+  snippets['units-placeholder'] = "[Units]";
 
 }).call(this);
 

@@ -13,14 +13,27 @@
     }
 
     Router.prototype.routes = {
-      expenses: 'expenses'
+      expenses: 'expenses',
+      units: 'units'
+    };
+
+    Router.prototype.initialize = function() {
+      return this.on('route', function() {
+        return views['submenu'].singleton().highlight();
+      });
     };
 
     Router.prototype.expenses = function() {
       views['expenses-hanging-rack'].singleton({
         $hook: $('#deal-reports')
-      });
+      }).show();
       return views['expenses-table'].singleton();
+    };
+
+    Router.prototype.units = function() {
+      return views['units-placeholder'].singleton({
+        $hook: $('#deal-reports')
+      }).show();
     };
 
     return Router;
