@@ -1,6 +1,9 @@
 (function() {
-  var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  var views,
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
+
+  views = PLP.namespace('views');
 
   PLP.Router = (function(superClass) {
     extend(Router, superClass);
@@ -14,19 +17,22 @@
     };
 
     Router.prototype.expenses = function() {
-      PLP.views['expenses-table'].singleton();
-      PLP.views['analysis-title'].singleton();
-      PLP.views['validation-switch'].singleton({
-        $hook: $('#top-tabs')
-      });
-      PLP.views['submenu'].singleton({
+      views['submenu'].singleton({
         $hook: $('#kpi-container')
       });
-      PLP.views['expenses-deal-reports-btn'].singleton({
+      views['expenses-hanging-rack'].singleton({
         $hook: $('#submenu')
       });
-      PLP.views['body'].singleton();
-      return PLP.views['submenu'].singleton().size();
+      views['expenses-table'].singleton();
+      views['analysis-title'].singleton();
+      views['validation-switch'].singleton({
+        $hook: $('#top-tabs')
+      });
+      views['expenses-deal-reports-btn'].singleton({
+        $hook: $('#submenu')
+      });
+      views['body'].singleton();
+      return views['submenu'].singleton().size();
     };
 
     return Router;

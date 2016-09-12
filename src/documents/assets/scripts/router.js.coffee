@@ -1,14 +1,17 @@
+views = PLP.namespace('views')
+
 class PLP.Router extends Backbone.Router
 
   routes: {
     expenses: 'expenses'}
 
   expenses: ->
-    PLP.views['expenses-table'].singleton()
-    PLP.views['analysis-title'].singleton()
-    PLP.views['validation-switch'].singleton({$hook: $('#top-tabs')})
-    PLP.views['submenu'].singleton({$hook: $('#kpi-container')})
-    PLP.views['expenses-deal-reports-btn'].singleton({$hook: $('#submenu')})
-    PLP.views['body'].singleton()
-    PLP.views['submenu'].singleton().size()
+    views['submenu'].singleton({$hook: $('#kpi-container')})
+    views['expenses-hanging-rack'].singleton({$hook: $('#submenu')})
+    views['expenses-table'].singleton()
+    views['analysis-title'].singleton()
+    views['validation-switch'].singleton({$hook: $('#top-tabs')})
+    views['expenses-deal-reports-btn'].singleton({$hook: $('#submenu')})
+    views['body'].singleton()
+    views['submenu'].singleton().size()
     
