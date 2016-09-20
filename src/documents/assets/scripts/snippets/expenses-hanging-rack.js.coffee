@@ -1,7 +1,7 @@
 snippets = PLP.namespace('snippets')
 
 snippets['expenses-hanging-rack'] = """
-  <h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Settings and Selections</h1>
+  <h1 class="slds-text-heading--small slds-m-bottom--medium" style="font-weight:regular">Expense Recoveries</h1>
   <form class="slds-form--inline slds-m-bottom--medium">
     <div class="slds-form-element">
       <label class="slds-form-element__label" for="name">Expense Base Year</label>

@@ -40,5 +40,5 @@ class PLP.Router extends Backbone.Router
     views['guarantees-placeholder'].singleton({$hook: $('#deal-reports')}).show()
 
   options: ->
-    views['options-placeholder'].singleton({$hook: $('#deal-reports')}).show()
+    views['options'].singleton({$hook: $('#deal-reports')}).show()
     

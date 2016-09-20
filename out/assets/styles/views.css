@@ -14,11 +14,11 @@
   top: -2px;
 }
 
-[data-view="expenses-deal-reports-btn"] {
+[data-view="deal-reports-btn"] {
   float: right;
   top: -54px;
 }
-[data-view="expenses-deal-reports-btn"] a {
+[data-view="deal-reports-btn"] a {
   padding-right: 40px;
 }
 

@@ -73,7 +73,7 @@
     };
 
     Router.prototype.options = function() {
-      return views['options-placeholder'].singleton({
+      return views['options'].singleton({
         $hook: $('#deal-reports')
       }).show();
     };

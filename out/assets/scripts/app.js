@@ -15,7 +15,7 @@
     $hook: $('#top-tabs')
   });
 
-  views['expenses-deal-reports-btn'].singleton({
+  views['deal-reports-btn'].singleton({
     $hook: $('#submenu')
   });
 

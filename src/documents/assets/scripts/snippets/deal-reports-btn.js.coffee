@@ -1,7 +1,7 @@
 snippets = PLP.namespace('snippets')
 
-snippets['expenses-deal-reports-btn'] = """
-  <button class="plp-deal-reports-button slds-button slds-button--neutral">
+snippets['deal-reports-btn'] = """
+  <button class="plp-deal-reports-button slds-button">
     Deal Reports
     <svg aria-hidden="true" class="slds-button__icon slds-button__icon--right">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>

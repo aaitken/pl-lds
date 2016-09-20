@@ -244,7 +244,8 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['expenses-deal-reports-btn'] = (function(superClass) {
+  views['deal-reports-btn'] = (function(superClass) {
+<<<<<<< Updated upstream
     extend(_Class, superClass);
 
     function _Class() {
@@ -263,7 +264,7 @@
     _Class.prototype.attributes = {
       id: 'deal-reports',
       "class": 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click',
-      'data-view': 'expenses-deal-reports-btn'
+      'data-view': 'deal-reports-btn'
     };
 
     _Class.prototype.events = {
@@ -276,7 +277,70 @@
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
       this.bodyView = views['body'].singleton();
-      this.snippet = _.template(snippets['expenses-deal-reports-btn']);
+      this.snippet = _.template(snippets['deal-reports-btn']);
+      return this.render();
+    };
+
+    _Class.prototype.render = function() {
+      this.$el.html(this.snippet);
+      return this.$hook.after(this.el);
+    };
+
+    _Class.prototype.toggleMenu = function(event) {
+      event.stopPropagation();
+      return this.$el.toggleClass('slds-is-open');
+    };
+
+    return _Class;
+
+  })(Backbone.View);
+
+}).call(this);
+
+(function() {
+  var snippets, views,
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
+  views = PLP.namespace('views');
+
+  snippets = PLP.namespace('snippets');
+
+  views['expenses-deal-reports-btn'] = (function(superClass) {
+=======
+>>>>>>> Stashed changes
+    extend(_Class, superClass);
+
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
+    }
+
+    _Class.singleton = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      return this.instance != null ? this.instance : this.instance = new this(options);
+    };
+
+    _Class.prototype.tagName = 'div';
+
+    _Class.prototype.attributes = {
+      id: 'deal-reports',
+      "class": 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click',
+      'data-view': 'deal-reports-btn'
+    };
+
+    _Class.prototype.events = {
+      click: function() {
+        this.bodyView.closeAll();
+        return this.toggleMenu(event);
+      }
+    };
+
+    _Class.prototype.initialize = function(options) {
+      this.$hook = options.$hook;
+      this.bodyView = views['body'].singleton();
+      this.snippet = _.template(snippets['deal-reports-btn']);
       return this.render();
     };
 
@@ -784,7 +848,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['options-placeholder'] = (function(superClass) {
+  views['options'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -798,16 +862,54 @@
       return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
-    _Class.prototype.tagName = 'h1';
+    _Class.prototype.initialize = function(options) {
+      this.$hook = options.$hook;
+      this.snippet = _.template(snippets['options']);
+      return this.render();
+    };
 
-    _Class.prototype.attributes = {
-      "class": 'slds-text-heading--small slds-m-bottom--medium plp-placeholder-spacer',
-      style: 'font-weight: regular'
+    _Class.prototype.render = function() {
+      this.$el.html(this.snippet);
+      return this.$hook.after(this.el);
+    };
+
+    _Class.prototype.show = function() {
+      this.$hook.nextAll().hide();
+      return this.$el.show();
+    };
+
+    return _Class;
+
+  })(Backbone.View);
+
+}).call(this);
+
+(function() {
+  var snippets, views,
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
+
+  views = PLP.namespace('views');
+
+  snippets = PLP.namespace('snippets');
+
+  views['options'] = (function(superClass) {
+    extend(_Class, superClass);
+
+    function _Class() {
+      return _Class.__super__.constructor.apply(this, arguments);
+    }
+
+    _Class.singleton = function(options) {
+      if (options == null) {
+        options = {};
+      }
+      return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['options-placeholder']);
+      this.snippet = _.template(snippets['options']);
       return this.render();
     };
 

@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['options-placeholder'] = (function(superClass) {
+  views['deal-reports-btn'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -21,16 +21,25 @@
       return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
-    _Class.prototype.tagName = 'h1';
+    _Class.prototype.tagName = 'div';
 
     _Class.prototype.attributes = {
-      "class": 'slds-text-heading--small slds-m-bottom--medium plp-placeholder-spacer',
-      style: 'font-weight: regular'
+      id: 'deal-reports',
+      "class": 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click',
+      'data-view': 'deal-reports-btn'
+    };
+
+    _Class.prototype.events = {
+      click: function() {
+        this.bodyView.closeAll();
+        return this.toggleMenu(event);
+      }
     };
 
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['options-placeholder']);
+      this.bodyView = views['body'].singleton();
+      this.snippet = _.template(snippets['deal-reports-btn']);
       return this.render();
     };
 
@@ -39,9 +48,9 @@
       return this.$hook.after(this.el);
     };
 
-    _Class.prototype.show = function() {
-      this.$hook.nextAll().hide();
-      return this.$el.show();
+    _Class.prototype.toggleMenu = function(event) {
+      event.stopPropagation();
+      return this.$el.toggleClass('slds-is-open');
     };
 
     return _Class;

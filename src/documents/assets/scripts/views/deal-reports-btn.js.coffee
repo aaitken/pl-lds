@@ -1,7 +1,7 @@
 views = PLP.namespace('views')
 snippets = PLP.namespace('snippets')
 
-class views['expenses-deal-reports-btn'] extends Backbone.View
+class views['deal-reports-btn'] extends Backbone.View
 
   @singleton = (options = {})->
     @instance ?= new this(options)
@@ -10,7 +10,7 @@ class views['expenses-deal-reports-btn'] extends Backbone.View
   attributes:
     id: 'deal-reports'
     class: 'plp-deal-reports-button slds-dropdown-trigger slds-dropdown-trigger--click'
-    'data-view': 'expenses-deal-reports-btn'
+    'data-view': 'deal-reports-btn'
 
   events:
     click: ->
@@ -20,7 +20,7 @@ class views['expenses-deal-reports-btn'] extends Backbone.View
   initialize: (options)->
     @$hook = options.$hook
     @bodyView = views['body'].singleton()
-    @snippet = _.template(snippets['expenses-deal-reports-btn'])
+    @snippet = _.template(snippets['deal-reports-btn'])
     @render()
 
   render: ->

@@ -1,19 +1,14 @@
 views = PLP.namespace('views')
 snippets = PLP.namespace('snippets')
 
-class views['options-placeholder'] extends Backbone.View
+class views['options'] extends Backbone.View
 
   @singleton = (options = {})->
     @instance ?= new this(options)
 
-  tagName: 'h1'
-  attributes:
-    class: 'slds-text-heading--small slds-m-bottom--medium plp-placeholder-spacer'
-    style: 'font-weight: regular'
-
   initialize: (options)->
     @$hook = options.$hook
-    @snippet = _.template(snippets['options-placeholder'])
+    @snippet = _.template(snippets['options'])
     @render()
 
   render: ->
