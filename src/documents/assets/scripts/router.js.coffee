@@ -19,7 +19,6 @@ class PLP.Router extends Backbone.Router
 
   expenses: ->
     views['expenses-hanging-rack'].singleton({$hook: $('#deal-reports')}).show()
-    views['expenses-table'].singleton()
 
   units: ->
     views['units-placeholder'].singleton({$hook: $('#deal-reports')}).show()

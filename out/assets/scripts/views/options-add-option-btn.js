@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['expenses-hanging-rack'] = (function(superClass) {
+  views['options-add-option-btn'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -21,25 +21,35 @@
       return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
+    _Class.prototype.tagName = 'div';
+
+    _Class.prototype.attributes = {
+      "class": 'slds-dropdown-trigger slds-dropdown-trigger--click slds-m-bottom--x-large',
+      'data-view': 'options-add-option-btn'
+    };
+
+    _Class.prototype.events = {
+      click: function() {
+        this.bodyView.closeAll();
+        return this.toggleMenu(event);
+      }
+    };
+
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['expenses-hanging-rack']);
-      this.render();
-      return this.writeChildren();
+      this.snippet = _.template(snippets['options-add-option-btn']);
+      this.bodyView = views['body'].singleton();
+      return this.render();
     };
 
     _Class.prototype.render = function() {
       this.$el.html(this.snippet);
-      return this.$hook.after(this.el);
+      return this.$hook.find('h1:eq(0)').after(this.el);
     };
 
-    _Class.prototype.show = function() {
-      this.$hook.nextAll().hide();
-      return this.$el.show();
-    };
-
-    _Class.prototype.writeChildren = function() {
-      return views['expenses-table'].singleton();
+    _Class.prototype.toggleMenu = function(event) {
+      event.stopPropagation();
+      return this.$el.toggleClass('slds-is-open');
     };
 
     return _Class;

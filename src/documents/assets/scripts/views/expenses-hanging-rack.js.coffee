@@ -11,6 +11,7 @@ class views['expenses-hanging-rack'] extends Backbone.View
     @$hook = options.$hook
     @snippet = _.template(snippets['expenses-hanging-rack'])
     @render()
+    @writeChildren()
 
   render: ->
     @$el.html @snippet
@@ -19,4 +20,7 @@ class views['expenses-hanging-rack'] extends Backbone.View
   show: ->
     @$hook.nextAll().hide()
     @$el.show()
+
+  writeChildren: ->
+    views['expenses-table'].singleton()
     

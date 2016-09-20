@@ -30,10 +30,9 @@
     };
 
     Router.prototype.expenses = function() {
-      views['expenses-hanging-rack'].singleton({
+      return views['expenses-hanging-rack'].singleton({
         $hook: $('#deal-reports')
       }).show();
-      return views['expenses-table'].singleton();
     };
 
     Router.prototype.units = function() {

@@ -21,10 +21,15 @@
       return this.instance != null ? this.instance : this.instance = new this(options);
     };
 
+    _Class.prototype.attributes = {
+      'data-view': 'options'
+    };
+
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
       this.snippet = _.template(snippets['options']);
-      return this.render();
+      this.render();
+      return this.writeChildren();
     };
 
     _Class.prototype.render = function() {
@@ -35,6 +40,12 @@
     _Class.prototype.show = function() {
       this.$hook.nextAll().hide();
       return this.$el.show();
+    };
+
+    _Class.prototype.writeChildren = function() {
+      return views['options-add-option-btn'].singleton({
+        $hook: this.$el
+      });
     };
 
     return _Class;
