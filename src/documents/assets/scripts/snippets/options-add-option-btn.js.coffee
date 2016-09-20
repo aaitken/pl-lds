@@ -10,67 +10,67 @@ snippets['options-add-option-btn'] = """
     <ul class="dropdown__list slds-dropdown--length-5" role="menu">
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="0">
-          <span class="slds-truncate">Termination</span>
+          <span data-value="termination" class="slds-truncate">Termination</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Contraction</span>
+          <span data-value="contraction" class="slds-truncate">Contraction</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Cancellation</span>
+          <span data-value="cancellation" class="slds-truncate">Cancellation</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Right to Notice of Sale</span>
+          <span data-value="right to notice" class="slds-truncate">Right to Notice of Sale</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="0">
-          <span class="slds-truncate">Right to Parking</span>
+          <span data-value="right to parking" class="slds-truncate">Right to Parking</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Relocation</span>
+          <span data-value="relocation" class="slds-truncate">Relocation</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Right to Remeasure</span>
+          <span data-value="right to remeasure" class="slds-truncate">Right to Remeasure</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Right of First Offer to Purchase</span>
+          <span data-value="right to purchase" class="slds-truncate">Right of First Offer to Purchase</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="0">
-          <span class="slds-truncate">Purchase</span>
+          <span data-value="purchase" class="slds-truncate">Purchase</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Expansion</span>
+          <span data-value="expansion" class="slds-truncate">Expansion</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">Renewal</span>
+          <span data-value="renewal" class="slds-truncate">Renewal</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">ROFO</span>
+          <span data-value="rofo" class="slds-truncate">ROFO</span>
         </a>
       </li>
       <li class="slds-dropdown__item" role="presentation">
         <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-          <span class="slds-truncate">ROFR</span>
+          <span data-value="rofr" class="slds-truncate">ROFR</span>
         </a>
       </li>
     </ul>
