@@ -39,7 +39,8 @@
     };
 
     _Class.prototype.writeRow = function() {
-      return this.$el.find('tbody').prepend(this.rowSnippet);
+      this.$el.find('tbody').prepend(this.rowSnippet);
+      return this.$el.find('tbody input:eq(0)').focus();
     };
 
     _Class.prototype.writeTable = function() {

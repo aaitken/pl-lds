@@ -20,6 +20,8 @@ class views['options-termination'] extends Backbone.View
 
   writeRow: ->
     @$el.find('tbody').prepend(@rowSnippet)
+    @$el.find('tbody input:eq(0)').focus()
+
     
   writeTable: ->
     if $("[data-view='options-termination']").length is 0
