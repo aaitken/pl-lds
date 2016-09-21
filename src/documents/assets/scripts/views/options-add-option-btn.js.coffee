@@ -8,7 +8,7 @@ class views['options-add-option-btn'] extends Backbone.View
 
   tagName: 'div'
   attributes:
-    class: 'slds-dropdown-trigger slds-dropdown-trigger--click slds-m-bottom--x-large'
+    class: 'slds-dropdown-trigger slds-dropdown-trigger--click'
     'data-view': 'options-add-option-btn'
 
   events:
@@ -35,7 +35,7 @@ class views['options-add-option-btn'] extends Backbone.View
   handle: ->
     val = $(event.target).attr('data-value') || $(event.target).find('span').attr('data-value')
     if val
-      @$el.removeClass('slds-is-open slds-m-bottom--x-large').addClass('slds-m-bottom--medium')
+      @$el.removeClass('slds-is-open')
       switch val
         when 'termination' then @terminationView.singleton({$hook: @$el}).writeTable().writeRow()
         when 'contraction' then console.log '2'

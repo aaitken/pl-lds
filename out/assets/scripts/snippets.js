@@ -84,7 +84,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['options-termination'] = "<h2 class=\"slds-text-title slds-m-bottom--x-small\" style=\"font-weight:\">Termination</h2>\n<table class=\"slds-m-bottom--x-large slds-table slds-table--bordered slds-no-row-hover\">\n  <thead>\n    <tr class=\"slds-text-heading--label\">\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Initiator</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Expiration</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Notice Months or Date</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Rolling Option</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Penalty Amount</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>...</span></div>\n      </th>\n      <th valign=\"top\"></th>\n    </tr>\n  </thead>\n  <tbody>\n  </tbody>\n</table>";
+  snippets['options-termination'] = "<h2 class=\"slds-text-title slds-m-bottom--small slds-m-top--medium\" style=\"font-weight:\">Termination</h2>\n<table class=\"slds-m-bottom--x-large slds-table slds-table--bordered slds-no-row-hover\">\n  <thead>\n    <tr class=\"slds-text-heading--label\">\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Initiator</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Expiration</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Notice Months or Date</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Rolling Option</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>Penalty Amount</span></div>\n      </th>\n      <th valign=\"top\">\n        <div class=\"slds-truncate\"><span>...</span></div>\n      </th>\n      <th valign=\"top\"></th>\n    </tr>\n  </thead>\n  <tbody>\n  </tbody>\n</table>";
 
 }).call(this);
 
@@ -93,7 +93,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['options'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\">Option Types and Details</h1>\n<h1 class=\"slds-text-heading--small slds-m-bottom--medium\">Comments</h1>\n<div class=\"slds-form-element\">\n  <div class=\"slds-form-element__control\">\n    <textarea class=\"slds-textarea\" placeholder=\"Add options comments here.\"></textarea>\n  </div>\n</div>";
+  snippets['options'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\">Option Types and Details</h1>\n<h1 class=\"slds-text-heading--small slds-m-bottom--medium slds-m-top--x-large\">Comments</h1>\n<div class=\"slds-form-element\">\n  <div class=\"slds-form-element__control\">\n    <textarea class=\"slds-textarea\" placeholder=\"Add options comments here.\"></textarea>\n  </div>\n</div>";
 
 }).call(this);
 

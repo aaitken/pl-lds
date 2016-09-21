@@ -1,7 +1,7 @@
 snippets = PLP.namespace('snippets')
 
 snippets['options-termination'] = """
-  <h2 class="slds-text-title slds-m-bottom--x-small" style="font-weight:">Termination</h2>
+  <h2 class="slds-text-title slds-m-bottom--small slds-m-top--medium" style="font-weight:">Termination</h2>
   <table class="slds-m-bottom--x-large slds-table slds-table--bordered slds-no-row-hover">
     <thead>
       <tr class="slds-text-heading--label">
