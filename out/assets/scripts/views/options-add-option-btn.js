@@ -41,6 +41,7 @@
       this.snippet = _.template(snippets['options-add-option-btn']);
       this.bodyView = views['body'].singleton();
       this.terminationView = views['options-termination'];
+      this.rightToNoticeView = views['options-right-to-notice'];
       return this.render();
     };
 
@@ -69,7 +70,9 @@
           case 'cancellation':
             return console.log('3');
           case 'right to notice':
-            return console.log('4');
+            return this.rightToNoticeView.singleton({
+              $hook: this.$el
+            }).writeTable().writeRow();
           case 'right to parking':
             return console.log('5');
           case 'relocation':

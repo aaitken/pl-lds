@@ -7,7 +7,7 @@
 
   snippets = PLP.namespace('snippets');
 
-  views['options-termination'] = (function(superClass) {
+  views['options-right-to-notice'] = (function(superClass) {
     extend(_Class, superClass);
 
     function _Class() {
@@ -22,8 +22,7 @@
     };
 
     _Class.prototype.attributes = {
-      'data-view': 'options-termination',
-      'style': 'display: none'
+      'data-view': 'options-right-to-notice'
     };
 
     _Class.prototype.events = function() {
@@ -34,39 +33,26 @@
 
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
-      this.snippet = _.template(snippets['options-termination']);
-      this.rowSnippet = _.template(snippets['options-termination-row']);
+      this.snippet = _.template(snippets['options-right-to-notice']);
+      this.rowSnippet = _.template(snippets['options-right-to-notice-row']);
       return this.render();
     };
 
     _Class.prototype.writeRow = function() {
-      return setTimeout(((function(_this) {
-        return function() {
-          _this.$el.find('tbody').prepend(_this.rowSnippet);
-          _this.$el.find('tbody input:eq(0)').focus();
-          return _this.$el.removeAttr('style');
-        };
-      })(this)), 25);
+      this.$el.find('tbody').prepend(this.rowSnippet);
+      return this.$el.find('tbody input:eq(0)').focus();
     };
 
     _Class.prototype.writeTable = function() {
-      if ($("[data-view='options-termination']").length === 0) {
+      if ($("[data-view='options-right-to-notice']").length === 0) {
         this.$hook.after(this.el);
       }
-      this.promote();
       return this;
     };
 
-    _Class.prototype.promote = function() {
-      var addOptionBtn;
-      addOptionBtn = $("[data-view='options-add-option-btn']")[0];
-      if (this.$el.prev()[0] !== addOptionBtn) {
-        return $(addOptionBtn).after(this.$el);
-      }
-    };
-
     _Class.prototype.render = function() {
-      return this.$el.html(this.snippet);
+      this.$el.html(this.snippet);
+      return this.writeTable();
     };
 
     _Class.prototype.remove = function() {

@@ -8,6 +8,7 @@ class views['options-termination'] extends Backbone.View
 
   attributes:
       'data-view': 'options-termination'
+      'style': 'display: none'
 
   events: ->
     click: 'remove'
@@ -19,18 +20,25 @@ class views['options-termination'] extends Backbone.View
     @render()
 
   writeRow: ->
-    @$el.find('tbody').prepend(@rowSnippet)
-    @$el.find('tbody input:eq(0)').focus()
-
+    setTimeout (=>
+      @$el.find('tbody').prepend(@rowSnippet)
+      @$el.find('tbody input:eq(0)').focus()
+      @$el.removeAttr('style')), 25 #timeout fixes non-rendering svg
+    
     
   writeTable: ->
     if $("[data-view='options-termination']").length is 0
       @$hook.after(@el)
+    @promote()
     return this
+
+  promote: ->
+    addOptionBtn = $("[data-view='options-add-option-btn']")[0]
+    if @$el.prev()[0] isnt addOptionBtn
+      $(addOptionBtn).after @$el
 
   render: ->
     @$el.html(@snippet)
-    @writeTable()
 
   remove: ->
     $target = $(event.target)

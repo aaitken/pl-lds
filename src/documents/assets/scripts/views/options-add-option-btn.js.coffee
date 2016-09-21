@@ -22,6 +22,7 @@ class views['options-add-option-btn'] extends Backbone.View
     @snippet = _.template(snippets['options-add-option-btn'])
     @bodyView = views['body'].singleton()
     @terminationView = views['options-termination']
+    @rightToNoticeView = views['options-right-to-notice']
     @render()
 
   render: ->
@@ -40,7 +41,7 @@ class views['options-add-option-btn'] extends Backbone.View
         when 'termination' then @terminationView.singleton({$hook: @$el}).writeTable().writeRow()
         when 'contraction' then console.log '2'
         when 'cancellation' then console.log '3'
-        when 'right to notice' then console.log '4'
+        when 'right to notice' then @rightToNoticeView.singleton({$hook: @$el}).writeTable().writeRow()
         when 'right to parking' then console.log '5'
         when 'relocation' then console.log '6'
         when 'right to remeasure' then console.log '7'

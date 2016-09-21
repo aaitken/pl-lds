@@ -1,8 +1,8 @@
 snippets = PLP.namespace('snippets')
 
-snippets['options-termination'] = """
-  <h2 class="slds-text-title slds-m-bottom--small slds-m-top--large" style="font-weight:">Termination</h2>
-  <table class="slds-m-bottom--x-large slds-table slds-table--bordered slds-no-row-hover">
+snippets['options-right-to-notice'] = """
+  <h2 class="slds-text-title slds-m-bottom--small slds-m-top--large" style="font-weight:">Right to Notice of Sale</h2>
+  <table class="slds-table slds-table--bordered slds-no-row-hover">
     <thead>
       <tr class="slds-text-heading--label">
         <th valign="top">
@@ -30,3 +30,4 @@ snippets['options-termination'] = """
     </tbody>
   </table>
   """
+
