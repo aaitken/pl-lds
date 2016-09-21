@@ -63,7 +63,7 @@
           case 'termination':
             return this.terminationView.singleton({
               $hook: this.$el
-            }).addRow();
+            }).writeTable().writeRow();
           case 'contraction':
             return console.log('2');
           case 'cancellation':

@@ -37,7 +37,7 @@ class views['options-add-option-btn'] extends Backbone.View
     if val
       @$el.removeClass('slds-is-open slds-m-bottom--x-large').addClass('slds-m-bottom--medium')
       switch val
-        when 'termination' then @terminationView.singleton({$hook: @$el}).addRow()
+        when 'termination' then @terminationView.singleton({$hook: @$el}).writeTable().writeRow()
         when 'contraction' then console.log '2'
         when 'cancellation' then console.log '3'
         when 'right to notice' then console.log '4'

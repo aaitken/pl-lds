@@ -845,7 +845,7 @@
           case 'termination':
             return this.terminationView.singleton({
               $hook: this.$el
-            }).addRow();
+            }).writeTable().writeRow();
           case 'contraction':
             return console.log('2');
           case 'cancellation':
@@ -909,15 +909,45 @@
       'data-view': 'options-termination'
     };
 
+    _Class.prototype.events = function() {
+      return {
+        click: 'remove'
+      };
+    };
+
     _Class.prototype.initialize = function(options) {
       this.$hook = options.$hook;
       this.snippet = _.template(snippets['options-termination']);
+      this.rowSnippet = _.template(snippets['options-termination-row']);
       return this.render();
+    };
+
+    _Class.prototype.writeRow = function() {
+      return this.$el.find('tbody').prepend(this.rowSnippet);
+    };
+
+    _Class.prototype.writeTable = function() {
+      if ($("[data-view='options-termination']").length === 0) {
+        this.$hook.after(this.el);
+      }
+      return this;
     };
 
     _Class.prototype.render = function() {
       this.$el.html(this.snippet);
-      return this.$hook.after(this.el);
+      return this.writeTable();
+    };
+
+    _Class.prototype.remove = function() {
+      var $target, targetName;
+      $target = $(event.target);
+      targetName = $target.prop('tagName').toLowerCase();
+      if (targetName === 'use' || targetName === 'svg') {
+        $target.parentsUntil('tbody').remove();
+      }
+      if (this.$el.find('tbody tr').length === 0) {
+        return this.$el.detach();
+      }
     };
 
     return _Class;
