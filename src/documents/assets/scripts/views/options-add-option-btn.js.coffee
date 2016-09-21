@@ -21,6 +21,7 @@ class views['options-add-option-btn'] extends Backbone.View
     @$hook = options.$hook
     @snippet = _.template(snippets['options-add-option-btn'])
     @bodyView = views['body'].singleton()
+    @terminationView = views['options-termination']
     @render()
 
   render: ->
@@ -34,8 +35,9 @@ class views['options-add-option-btn'] extends Backbone.View
   handle: ->
     val = $(event.target).attr('data-value') || $(event.target).find('span').attr('data-value')
     if val
+      @$el.removeClass('slds-is-open slds-m-bottom--x-large').addClass('slds-m-bottom--medium')
       switch val
-        when 'termination' then console.log '1'
+        when 'termination' then @terminationView.singleton({$hook: @$el}).addRow()
         when 'contraction' then console.log '2'
         when 'cancellation' then console.log '3'
         when 'right to notice' then console.log '4'
@@ -49,4 +51,3 @@ class views['options-add-option-btn'] extends Backbone.View
         when 'rofo' then console.log '12'
         when 'rofr' then console.log '13'
         else null
-      @$el.removeClass('slds-is-open')

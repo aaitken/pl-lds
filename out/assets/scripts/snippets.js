@@ -75,7 +75,16 @@
 
   snippets = PLP.namespace('snippets');
 
-  snippets['options'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">Option Types and Details</h1>\n<h1 class=\"slds-text-heading--small slds-m-bottom--medium\" style=\"font-weight:regular\">Comments</h1>\n<div class=\"slds-form-element\">\n  <div class=\"slds-form-element__control\">\n    <textarea class=\"slds-textarea\" placeholder=\"Add options comments here.\"></textarea>\n  </div>\n</div>";
+  snippets['options-termination'] = "<h2 class=\"slds-text-title slds-m-bottom--x-large\" style=\"font-weight:\">Termination</h2>";
+
+}).call(this);
+
+(function() {
+  var snippets;
+
+  snippets = PLP.namespace('snippets');
+
+  snippets['options'] = "<h1 class=\"slds-text-heading--small slds-m-bottom--medium\">Option Types and Details</h1>\n<h1 class=\"slds-text-heading--small slds-m-bottom--medium\">Comments</h1>\n<div class=\"slds-form-element\">\n  <div class=\"slds-form-element__control\">\n    <textarea class=\"slds-textarea\" placeholder=\"Add options comments here.\"></textarea>\n  </div>\n</div>";
 
 }).call(this);
 

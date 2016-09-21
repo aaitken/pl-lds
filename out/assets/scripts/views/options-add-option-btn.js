@@ -40,6 +40,7 @@
       this.$hook = options.$hook;
       this.snippet = _.template(snippets['options-add-option-btn']);
       this.bodyView = views['body'].singleton();
+      this.terminationView = views['options-termination'];
       return this.render();
     };
 
@@ -57,50 +58,39 @@
       var val;
       val = $(event.target).attr('data-value') || $(event.target).find('span').attr('data-value');
       if (val) {
+        this.$el.removeClass('slds-is-open slds-m-bottom--x-large').addClass('slds-m-bottom--medium');
         switch (val) {
           case 'termination':
-            console.log('1');
-            break;
+            return this.terminationView.singleton({
+              $hook: this.$el
+            }).addRow();
           case 'contraction':
-            console.log('2');
-            break;
+            return console.log('2');
           case 'cancellation':
-            console.log('3');
-            break;
+            return console.log('3');
           case 'right to notice':
-            console.log('4');
-            break;
+            return console.log('4');
           case 'right to parking':
-            console.log('5');
-            break;
+            return console.log('5');
           case 'relocation':
-            console.log('6');
-            break;
+            return console.log('6');
           case 'right to remeasure':
-            console.log('7');
-            break;
+            return console.log('7');
           case 'right to purchase':
-            console.log('8');
-            break;
+            return console.log('8');
           case 'purchase':
-            console.log('9');
-            break;
+            return console.log('9');
           case 'expansion':
-            console.log('10');
-            break;
+            return console.log('10');
           case 'renewal':
-            console.log('11');
-            break;
+            return console.log('11');
           case 'rofo':
-            console.log('12');
-            break;
+            return console.log('12');
           case 'rofr':
-            console.log('13');
-            break;
+            return console.log('13');
           default:
-            null;
+            return null;
         }
-        return this.$el.removeClass('slds-is-open');
       }
     };
 
