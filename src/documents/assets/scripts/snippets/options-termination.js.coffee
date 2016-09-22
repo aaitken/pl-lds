@@ -15,7 +15,7 @@ snippets['options-termination'] = """
           <div class="slds-truncate"><span>Notice Months or Date</span></div>
         </th>
         <th valign="top">
-          <div class="slds-truncate"><span>Rolling Option</span></div>
+          <div class="slds-truncate"><span>Options</span></div>
         </th>
         <th valign="top">
           <div class="slds-truncate"><span>Penalty Amount</span></div>
